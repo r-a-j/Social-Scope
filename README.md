@@ -1,6 +1,12 @@
-﻿📊 **SocialScope** 🧐
+﻿# SocialScope 🧐
 
-🔍 **Tasks:**
+#### [Social Scope homepage](https://github.com/r-a-j/Social-Scope)
+
+### Requirements:
+---
+ - [Python 3.10](https://www.python.org/downloads/release/python-3100/)
+
+🔍 **Planned Tasks:**
 
 - **Sentiment Analysis:** 💬 Understand user opinions from comments and captions.
 - **Image Recognition:** 🖼️ Identify objects, scenes, and people in images.
@@ -32,3 +38,8 @@
 - **Premium Features:** 🌟 Offer advanced analytics as part of a premium package.
 - **Training Workshops:** 🎓 Conduct workshops on Instagram data analysis.
 - **Sponsored Content:** 🤝 Collaborate with influencers for sponsored posts.
+
+### Installing development requirements
+---
+
+    pip install -r requirements.txt
