@@ -1,0 +1,1395 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="SocialScope harnesses the power of data science to Instagram's vast content, providing insightful analytics and trend predictions for informed decision-making.">
+      
+      
+      
+      
+      
+        <link rel="next" href="scraper/">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Social Scope</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-9NMXFC18QL"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-9NMXFC18QL",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-9NMXFC18QL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#social-scope" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Social Scope" class="md-header__button md-logo" aria-label="Social Scope" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Social Scope
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="lime" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="lime" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/r-a-j/Social-Scope" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    r-a-j/Social-Scope
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Social Scope" class="md-nav__button md-logo" aria-label="Social Scope" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    Social Scope
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/r-a-j/Social-Scope" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    r-a-j/Social-Scope
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-this-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why use this project structure?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why use this project structure?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-people-will-thank-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other people will thank you
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#you-will-thank-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      You will thank you
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nothing-here-is-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nothing here is binding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting started
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-new-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting a new project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directory structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opinions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opinions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Opinions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-is-immutable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data is immutable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notebooks-are-for-exploration-and-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notebooks are for exploration and communication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-is-a-directed-acyclic-graph-dag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis is a directed acyclic graph (DAG)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-from-the-environment-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build from the environment up
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep-secrets-and-configuration-out-of-version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keep secrets and configuration out of version control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keep secrets and configuration out of version control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#store-your-secrets-and-config-variables-in-a-special-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store your secrets and config variables in a special file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-package-to-load-these-variables-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use a package to load these variables automatically.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-cli-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS CLI configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#be-conservative-in-changing-the-default-folder-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Be conservative in changing the default folder structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="scraper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scraper
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sentiment-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sentiment Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="image-recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="content-trend-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Content Trend Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user-engagement-prediction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Engagement Prediction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="community-detection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community Detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hashtag-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hashtag Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="influencer-identification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Influencer Identification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recommender-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recommender Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="time-series-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time Series Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="network-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-this-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why use this project structure?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why use this project structure?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-people-will-thank-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other people will thank you
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#you-will-thank-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      You will thank you
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nothing-here-is-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nothing here is binding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting started
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-new-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting a new project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directory structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opinions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opinions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Opinions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-is-immutable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data is immutable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notebooks-are-for-exploration-and-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notebooks are for exploration and communication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-is-a-directed-acyclic-graph-dag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis is a directed acyclic graph (DAG)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-from-the-environment-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build from the environment up
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep-secrets-and-configuration-out-of-version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keep secrets and configuration out of version control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keep secrets and configuration out of version control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#store-your-secrets-and-config-variables-in-a-special-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store your secrets and config variables in a special file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-package-to-load-these-variables-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use a package to load these variables automatically.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-cli-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS CLI configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#be-conservative-in-changing-the-default-folder-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Be conservative in changing the default folder structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/r-a-j/Social-Scope/edit/main/docs/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/r-a-j/Social-Scope/raw/main/docs/docs/index.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="social-scope">Social Scope</h1>
+<h2 id="why-use-this-project-structure">Why use this project structure?</h2>
+<blockquote>
+<p>We're not talking about bikeshedding the indentation aesthetics or pedantic formatting standards — ultimately, data science code quality is about correctness and reproducibility.</p>
+</blockquote>
+<p>When we think about data analysis, we often think just about the resulting reports, insights, or visualizations. While these end products are generally the main event, it's easy to focus on making the products <em>look nice</em> and ignore the <em>quality of the code that generates them</em>. Because these end products are created programmatically, <strong>code quality is still important</strong>! And we're not talking about bikeshedding the indentation aesthetics or pedantic formatting standards — ultimately, data science code quality is about correctness and reproducibility.</p>
+<p>It's no secret that good analyses are often the result of very scattershot and serendipitous explorations. Tentative experiments and rapidly testing approaches that might not work out are all part of the process for getting to the good stuff, and there is no magic bullet to turn data exploration into a simple, linear progression.</p>
+<p>That being said, once started it is not a process that lends itself to thinking carefully about the structure of your code or project layout, so it's best to start with a clean, logical structure and stick to it throughout. We think it's a pretty big win all around to use a fairly standardized setup like this one. Here's why:</p>
+<h3 id="other-people-will-thank-you">Other people will thank you</h3>
+<blockquote>
+<p>Nobody sits around before creating a new Rails project to figure out where they want to put their views; they just run <code>rails new</code> to get a standard project skeleton like everybody else.</p>
+</blockquote>
+<p>A well-defined, standard project structure means that a newcomer can begin to understand an analysis without digging in to extensive documentation. It also means that they don't necessarily have to read 100% of the code before knowing where to look for very specific things.</p>
+<p>Well organized code tends to be self-documenting in that the organization itself provides context for your code without much overhead. People will thank you for this because they can:</p>
+<ul>
+<li>Collaborate more easily with you on this analysis</li>
+<li>Learn from your analysis about the process and the domain</li>
+<li>Feel confident in the conclusions at which the analysis arrives</li>
+</ul>
+<p>A good example of this can be found in any of the major web development frameworks like Django or Ruby on Rails. Nobody sits around before creating a new Rails project to figure out where they want to put their views; they just run <code>rails new</code> to get a standard project skeleton like everybody else. Because that default project structure is <em>logical</em> and <em>reasonably standard across most projects</em>, it is much easier for somebody who has never seen a particular project to figure out where they would find the various moving parts.</p>
+<p>Another great example is the <a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Filesystem Hierarchy Standard</a> for Unix-like systems. The <code>/etc</code> directory has a very specific purpose, as does the <code>/tmp</code> folder, and everybody (more or less) agrees to honor that social contract. That means a Red Hat user and an Ubuntu user both know roughly where to look for certain types of files, even when using each other's system — or any other standards-compliant system for that matter!</p>
+<p>Ideally, that's how it should be when a colleague opens up your data science project.</p>
+<h3 id="you-will-thank-you">You will thank you</h3>
+<p>Ever tried to reproduce an analysis that you did a few months ago or even a few years ago? You may have written the code, but it's now impossible to decipher whether you should use <code>make_figures.py.old</code>, <code>make_figures_working.py</code> or <code>new_make_figures01.py</code> to get things done. Here are some questions we've learned to ask with a sense of existential dread:</p>
+<ul>
+<li>Are we supposed to go in and join the column X to the data before we get started or did that come from one of the notebooks?</li>
+<li>Come to think of it, which notebook do we have to run first before running the plotting code: was it "process data" or "clean data"?</li>
+<li>Where did the shapefiles get downloaded from for the geographic plots?</li>
+<li><em>Et cetera, times infinity.</em></li>
+</ul>
+<p>These types of questions are painful and are symptoms of a disorganized project. A good project structure encourages practices that make it easier to come back to old work, for example separation of concerns, abstracting analysis as a <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">DAG</a>, and engineering best practices like version control.</p>
+<h3 id="nothing-here-is-binding">Nothing here is binding</h3>
+<blockquote>
+<p>"A foolish consistency is the hobgoblin of little minds" — Ralph Waldo Emerson (and <a href="https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds">PEP 8!</a>)</p>
+</blockquote>
+<p>Disagree with a couple of the default folder names? Working on a project that's a little nonstandard and doesn't exactly fit with the current structure? Prefer to use a different package than one of the (few) defaults?</p>
+<p><strong>Go for it!</strong> This is a lightweight structure, and is intended to be a good <em>starting point</em> for many projects. Or, as PEP 8 put it:</p>
+<blockquote>
+<p>Consistency within a project is more important. Consistency within one module or function is the most important. ... However, know when to be inconsistent -- sometimes style guide recommendations just aren't applicable. When in doubt, use your best judgment. Look at other examples and decide what looks best. And don't hesitate to ask!</p>
+</blockquote>
+<h2 id="getting-started">Getting started</h2>
+<p>With this in mind, we've created a data science cookiecutter template for projects in Python. Your analysis doesn't have to be in Python, but the template does provide some Python boilerplate that you'd want to remove (in the <code>src</code> folder for example, and the Sphinx documentation skeleton in <code>docs</code>).</p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>Python 2.7 or 3.5</li>
+<li><a href="http://cookiecutter.readthedocs.org/en/latest/installation.html">cookiecutter Python package</a> &gt;= 1.4.0: <code>pip install cookiecutter</code></li>
+</ul>
+<h3 id="starting-a-new-project">Starting a new project</h3>
+<p>Starting a new project is as easy as running this command at the command line. No need to create a directory first, the cookiecutter will do it for you.</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>cookiecutter https://github.com/drivendata/cookiecutter-data-science
+</code></pre></div>
+<h3 id="example">Example</h3>
+<h2 id="directory-structure">Directory structure</h2>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>├── LICENSE
+├── Makefile           &lt;- Makefile with commands like `make data` or `make train`
+├── README.md          &lt;- The top-level README for developers using this project.
+├── data
+│   ├── external       &lt;- Data from third party sources.
+│   ├── interim        &lt;- Intermediate data that has been transformed.
+│   ├── processed      &lt;- The final, canonical data sets for modeling.
+│   └── raw            &lt;- The original, immutable data dump.
+│
+├── docs               &lt;- A default Sphinx project; see sphinx-doc.org for details
+│
+├── models             &lt;- Trained and serialized models, model predictions, or model summaries
+│
+├── notebooks          &lt;- Jupyter notebooks. Naming convention is a number (for ordering),
+│                         the creator&#39;s initials, and a short `-` delimited description, e.g.
+│                         `1.0-jqp-initial-data-exploration`.
+│
+├── references         &lt;- Data dictionaries, manuals, and all other explanatory materials.
+│
+├── reports            &lt;- Generated analysis as HTML, PDF, LaTeX, etc.
+│   └── figures        &lt;- Generated graphics and figures to be used in reporting
+│
+├── requirements.txt   &lt;- The requirements file for reproducing the analysis environment, e.g.
+│                         generated with `pip freeze &gt; requirements.txt`
+│
+├── setup.py           &lt;- Make this project pip installable with `pip install -e`
+├── src                &lt;- Source code for use in this project.
+│   ├── __init__.py    &lt;- Makes src a Python module
+│   │
+│   ├── data           &lt;- Scripts to download or generate data
+│   │   └── make_dataset.py
+│   │
+│   ├── features       &lt;- Scripts to turn raw data into features for modeling
+│   │   └── build_features.py
+│   │
+│   ├── models         &lt;- Scripts to train models and then use trained models to make
+│   │   │                 predictions
+│   │   ├── predict_model.py
+│   │   └── train_model.py
+│   │
+│   └── visualization  &lt;- Scripts to create exploratory and results oriented visualizations
+│       └── visualize.py
+│
+└── tox.ini            &lt;- tox file with settings for running tox; see tox.readthedocs.io
+</code></pre></div>
+<h2 id="opinions">Opinions</h2>
+<p>There are some opinions implicit in the project structure that have grown out of our experience with what works and what doesn't when collaborating on data science projects. Some of the opinions are about workflows, and some of the opinions are about tools that make life easier. Here are some of the beliefs which this project is built on—if you've got thoughts, please <a href="#contributing">contribute or share them</a>.</p>
+<h3 id="data-is-immutable">Data is immutable</h3>
+<p>Don't ever edit your raw data, especially not manually, and especially not in Excel. Don't overwrite your raw data. Don't save multiple versions of the raw data. Treat the data (and its format) as immutable. The code you write should move the raw data through a pipeline to your final analysis. You shouldn't have to run all of the steps every time you want to make a new figure (see <a href="#analysis-is-a-dag">Analysis is a DAG</a>), but anyone should be able to reproduce the final products with only the code in <code>src</code> and the data in <code>data/raw</code>.</p>
+<p>Also, if data is immutable, it doesn't need source control in the same way that code does. Therefore, <strong><em>by default, the data folder is included in the <code>.gitignore</code> file.</em></strong> If you have a small amount of data that rarely changes, you may want to include the data in the repository. Github currently warns if files are over 50MB and rejects files over 100MB. Some other options for storing/syncing large data include <a href="https://aws.amazon.com/s3/">AWS S3</a> with a syncing tool (e.g., <a href="http://s3tools.org/s3cmd"><code>s3cmd</code></a>), <a href="https://git-lfs.github.com/">Git Large File Storage</a>, <a href="https://git-annex.branchable.com/">Git Annex</a>, and <a href="http://dat-data.com/">dat</a>. Currently by default, we ask for an S3 bucket and use <a href="http://docs.aws.amazon.com/cli/latest/reference/s3/index.html">AWS CLI</a> to sync data in the <code>data</code> folder with the server.</p>
+<h3 id="notebooks-are-for-exploration-and-communication">Notebooks are for exploration and communication</h3>
+<p>Notebook packages like the <a href="http://jupyter.org/">Jupyter notebook</a>, <a href="http://beakernotebook.com/">Beaker notebook</a>, <a href="http://zeppelin-project.org/">Zeppelin</a>, and other literate programming tools are very effective for exploratory data analysis. However, these tools can be less effective for reproducing an analysis. When we use notebooks in our work, we often subdivide the <code>notebooks</code> folder. For example, <code>notebooks/exploratory</code> contains initial explorations, whereas <code>notebooks/reports</code> is more polished work that can be exported as html to the <code>reports</code> directory.</p>
+<p>Since notebooks are challenging objects for source control (e.g., diffs of the <code>json</code> are often not human-readable and merging is near impossible), we recommended not collaborating directly with others on Jupyter notebooks. There are two steps we recommend for using notebooks effectively:</p>
+<ol>
+<li>
+<p>Follow a naming convention that shows the owner and the order the analysis was done in. We use the format <code>&lt;step&gt;-&lt;ghuser&gt;-&lt;description&gt;.ipynb</code> (e.g., <code>0.3-bull-visualize-distributions.ipynb</code>).</p>
+</li>
+<li>
+<p>Refactor the good parts. Don't write code to do the same task in multiple notebooks. If it's a data preprocessing task, put it in the pipeline at <code>src/data/make_dataset.py</code> and load data from <code>data/interim</code>. If it's useful utility code, refactor it to <code>src</code>.</p>
+</li>
+</ol>
+<p>Now by default we turn the project into a Python package (see the <code>setup.py</code> file). You can import your code and use it in notebooks with a cell like the following:</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code># OPTIONAL: Load the &quot;autoreload&quot; extension so that code can change
+%load_ext autoreload
+
+# OPTIONAL: always reload modules so that as you change code in src, it gets loaded
+%autoreload 2
+
+from src.data import make_dataset
+</code></pre></div>
+<h3 id="analysis-is-a-directed-acyclic-graph-dag">Analysis is a directed acyclic graph (<a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">DAG</a>)</h3>
+<p>Often in an analysis you have long-running steps that preprocess data or train models. If these steps have been run already (and you have stored the output somewhere like the <code>data/interim</code> directory), you don't want to wait to rerun them every time. We prefer <a href="https://www.gnu.org/software/make/"><code>make</code></a> for managing steps that depend on each other, especially the long-running ones. Make is a common tool on Unix-based platforms (and <a href="">is available for Windows</a>). Following the <a href="https://www.gnu.org/software/make/"><code>make</code> documentation</a>, <a href="https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html#Makefile-Conventions">Makefile conventions</a>, and <a href="http://www.gnu.org/savannah-checkouts/gnu/autoconf/manual/autoconf-2.69/html_node/Portable-Make.html#Portable-Make">portability guide</a> will help ensure your Makefiles work effectively across systems. Here are <a href="http://zmjones.com/make/">some</a> <a href="http://blog.kaggle.com/2012/10/15/make-for-data-scientists/">examples</a> to <a href="https://web.archive.org/web/20150206054212/http://www.bioinformaticszen.com/post/decomplected-workflows-makefiles/">get started</a>. A number of data folks use <code>make</code> as their tool of choice, including <a href="https://bost.ocks.org/mike/make/">Mike Bostock</a>.</p>
+<p>There are other tools for managing DAGs that are written in Python instead of a DSL (e.g., <a href="http://paver.github.io/paver/#">Paver</a>, <a href="http://luigi.readthedocs.org/en/stable/index.html">Luigi</a>, <a href="https://airflow.apache.org/index.html">Airflow</a>, <a href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a>, <a href="http://www.ruffus.org.uk/">Ruffus</a>, or <a href="https://pythonhosted.org/joblib/memory.html">Joblib</a>). Feel free to use these if they are more appropriate for your analysis.</p>
+<h3 id="build-from-the-environment-up">Build from the environment up</h3>
+<p>The first step in reproducing an analysis is always reproducing the computational environment it was run in. You need the same tools, the same libraries, and the same versions to make everything play nicely together.</p>
+<p>One effective approach to this is use <a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a> (we recommend <a href="https://virtualenvwrapper.readthedocs.org/en/latest/">virtualenvwrapper</a> for managing virtualenvs). By listing all of your requirements in the repository (we include a <code>requirements.txt</code> file) you can easily track the packages needed to recreate the analysis. Here is a good workflow:</p>
+<ol>
+<li>Run <code>mkvirtualenv</code> when creating a new project</li>
+<li><code>pip install</code> the packages that your analysis needs</li>
+<li>Run <code>pip freeze &gt; requirements.txt</code> to pin the exact package versions used to recreate the analysis</li>
+<li>If you find you need to install another package, run <code>pip freeze &gt; requirements.txt</code> again and commit the changes to version control.</li>
+</ol>
+<p>If you have more complex requirements for recreating your environment, consider a virtual machine based approach such as <a href="https://www.docker.com/">Docker</a> or <a href="https://www.vagrantup.com/">Vagrant</a>. Both of these tools use text-based formats (Dockerfile and Vagrantfile respectively) you can easily add to source control to describe how to create a virtual machine with the requirements you need.</p>
+<h3 id="keep-secrets-and-configuration-out-of-version-control">Keep secrets and configuration out of version control</h3>
+<p>You <em>really</em> don't want to leak your AWS secret key or Postgres username and password on Github. Enough said — see the <a href="http://12factor.net/config">Twelve Factor App</a> principles on this point. Here's one way to do this:</p>
+<h4 id="store-your-secrets-and-config-variables-in-a-special-file">Store your secrets and config variables in a special file</h4>
+<p>Create a <code>.env</code> file in the project root folder. Thanks to the <code>.gitignore</code>, this file should never get committed into the version control repository. Here's an example:</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code># example .env file
+DATABASE_URL=postgres://username:password@localhost:5432/dbname
+AWS_ACCESS_KEY=myaccesskey
+AWS_SECRET_ACCESS_KEY=mysecretkey
+OTHER_VARIABLE=something
+</code></pre></div>
+<h4 id="use-a-package-to-load-these-variables-automatically">Use a package to load these variables automatically.</h4>
+<p>If you look at the stub script in <code>src/data/make_dataset.py</code>, it uses a package called <a href="https://github.com/theskumar/python-dotenv">python-dotenv</a> to load up all the entries in this file as environment variables so they are accessible with <code>os.environ.get</code>. Here's an example snippet adapted from the <code>python-dotenv</code> documentation:</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span class="c1"># src/data/dotenv_example.py</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span><span class="p">,</span> <span class="n">find_dotenv</span>
+
+<span class="c1"># find .env automagically by walking up directories until it&#39;s found</span>
+<span class="n">dotenv_path</span> <span class="o">=</span> <span class="n">find_dotenv</span><span class="p">()</span>
+
+<span class="c1"># load up the entries as environment variables</span>
+<span class="n">load_dotenv</span><span class="p">(</span><span class="n">dotenv_path</span><span class="p">)</span>
+
+<span class="n">database_url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DATABASE_URL&quot;</span><span class="p">)</span>
+<span class="n">other_variable</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OTHER_VARIABLE&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="aws-cli-configuration">AWS CLI configuration</h4>
+<p>When using Amazon S3 to store data, a simple method of managing AWS access is to set your access keys to environment variables. However, managing mutiple sets of keys on a single machine (e.g. when working on multiple projects) it is best to use a <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html">credentials file</a>, typically located in <code>~/.aws/credentials</code>. A typical file might look like:
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>[default]
+aws_access_key_id=myaccesskey
+aws_secret_access_key=mysecretkey
+
+[another_project]
+aws_access_key_id=myprojectaccesskey
+aws_secret_access_key=myprojectsecretkey
+</code></pre></div>
+You can add the profile name when initialising a project; assuming no applicable environment variables are set, the profile credentials will be used by default.</p>
+<h3 id="be-conservative-in-changing-the-default-folder-structure">Be conservative in changing the default folder structure</h3>
+<p>To keep this structure broadly applicable for many different kinds of projects, we think the best approach is to be liberal in changing the folders around for <em>your</em> project, but be conservative in changing the default structure for <em>all</em> projects.</p>
+<p>We've created a <span class="label label-info">folder-layout</span> label specifically for issues proposing to add, subtract, rename, or move folders around. More generally, we've also created a <span class="label label-warning">needs-discussion</span> label for issues that should have some careful discussion and broad support before being implemented.</p>
+<h2 id="contributing">Contributing</h2>
+<p>The Social Scope Data Science project is opinionated, but not afraid to be wrong. Best practices change, tools evolve, and lessons are learned. <a href="https://github.com/r-a-j/Social-Scope/pulls">Pull requests</a> and <a href="https://github.com/r-a-j/Social-Scope/issues">filing issues</a> is encouraged. We'd love to hear what works for you, and what doesn't.</p>
+<p>If you use the Social Scope Data Science project, link back to this page or <a href="mailto:er.rajpawar@gmail.com">let us know</a>!</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 14, 2024</span>
+  </span>
+
+    
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:raj24100@outlook.com">DevOpsOfficer</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+        
+          
+          <a href="scraper/" class="md-footer__link md-footer__link--next" aria-label="Next: Scraper">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Scraper
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Project maintained by <a target=_blanks href="https://rajpawar.in">Raju</a> &#128568;
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+  
+    
+  
+
+
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.    </p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Reject</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.sections", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "header.autohide", "navigation.footer", "content.action.view", "content.action.edit", "content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
