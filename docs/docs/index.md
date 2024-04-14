@@ -1,6 +1,5 @@
-# Cookiecutter Data Science
+# Social Scope
 
-_A logical, reasonably standardized, but flexible project structure for doing and sharing data science work._
 
 ## Why use this project structure?
 
@@ -72,7 +71,6 @@ cookiecutter https://github.com/drivendata/cookiecutter-data-science
 
 ### Example
 
-<script id="asciicast-244658" src="https://asciinema.org/a/244658.js" async></script>
 
 ## Directory structure
 
@@ -230,17 +228,6 @@ We've created a <span class="label label-info">folder-layout</span> label specif
 
 ## Contributing
 
-The Cookiecutter Data Science project is opinionated, but not afraid to be wrong. Best practices change, tools evolve, and lessons are learned. **The goal of this project is to make it easier to start, structure, and share an analysis.** [Pull requests](https://github.com/drivendata/cookiecutter-data-science/pulls) and [filing issues](https://github.com/drivendata/cookiecutter-data-science/issues) is encouraged. We'd love to hear what works for you, and what doesn't.
+The Social Scope Data Science project is opinionated, but not afraid to be wrong. Best practices change, tools evolve, and lessons are learned. [Pull requests](https://github.com/r-a-j/Social-Scope/pulls) and [filing issues](https://github.com/r-a-j/Social-Scope/issues) is encouraged. We'd love to hear what works for you, and what doesn't.
 
-If you use the Cookiecutter Data Science project, link back to this page or [give us a holler](https://twitter.com/drivendataorg) and [let us know](mailto:info@drivendata.org)!
-
-## Links to related projects and references
-
-Project structure and reproducibility is talked about more in the R research community. Here are some projects and blog posts if you're working in R that may help you out.
-
- - [Project Template](http://projecttemplate.net/index.html) - An R data analysis template
- - "[Designing projects](http://nicercode.github.io/blog/2013-04-05-projects/)" on Nice R Code
- - "[My research workflow](http://www.carlboettiger.info/2012/05/06/research-workflow.html)" on Carlboettiger.info
- - "[A Quick Guide to Organizing Computational Biology Projects](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424)" in PLOS Computational Biology
-
-Finally, a huge thanks to the [Cookiecutter](https://cookiecutter.readthedocs.org/en/latest/) project ([github](https://github.com/audreyr/cookiecutter)), which is helping us all spend less time thinking about and writing boilerplate and more time getting things done.
+If you use the Social Scope Data Science project, link back to this page or [let us know](mailto:er.rajpawar@gmail.com)!
