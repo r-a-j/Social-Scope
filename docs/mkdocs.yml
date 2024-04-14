@@ -8,11 +8,13 @@ copyright: Project maintained by <a target=_blanks href="https://rajpawar.in">Ra
 
 plugins:
   - search
+  - git-authors
   - git-revision-date-localized:
       fallback_to_build_date: true
   - git-committers:
+      enabled: true
       repository: r-a-j/Social-Scope
-      branch: main
+      branch: main      
 
 theme:
   icon:
