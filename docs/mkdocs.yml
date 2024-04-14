@@ -3,7 +3,7 @@ site_description: SocialScope harnesses the power of data science to Instagram's
 
 repo_url: https://github.com/r-a-j/Social-Scope
 repo_name: r-a-j/Social-Scope
-edit_uri: edit/master/docs/docs
+edit_uri: edit/main/docs/docs
 copyright: Project maintained by <a target=_blanks href="https://rajpawar.in">Raju</a> &#128568;
 
 plugins:
