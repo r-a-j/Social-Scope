@@ -1,4 +1,4 @@
-﻿# SocialScope 🧐
+<img src="https://github.com/r-a-j/Social-Scope/blob/main/assets/logo.png" />
 
 #### [Social Scope homepage](https://github.com/r-a-j/Social-Scope)
 
