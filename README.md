@@ -2,6 +2,8 @@
 
 #### [Social Scope homepage](https://github.com/r-a-j/Social-Scope)
 
+#### [Docs](https://precious-jalebi-a6ee2b.netlify.app/)
+
 ### Requirements:
 ---
  - [Python 3.10](https://www.python.org/downloads/release/python-3100/)
