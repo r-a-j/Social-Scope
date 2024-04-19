@@ -24,7 +24,7 @@ theme:
   logo: assets/logo.png    
   favicon: favicon.ico
   language: en
-  name: material
+  name: dracula
   features:
     - navigation.sections  
     - navigation.instant
@@ -47,15 +47,15 @@ theme:
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: lime
-      accent: indigo
+      primary: white
+      accent: light blue
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: lime
-      accent: indigo
+      primary: white
+      accent: light blue
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
