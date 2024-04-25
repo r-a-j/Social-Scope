@@ -39,18 +39,15 @@ python -m venv .venv
 ```
 
 - Step 2: Enter into the virtual env
-
 activate virtual environment (VS Code):
 ```console
 .venv\Scripts\activate
 ```
-
 activate virtual environment (VS IDE):
 ```console
 .\venv\Scripts\Activate.ps1
 ```
 Both commands are the same, but somehow, in this case, the Visual Studio IDE is bit different.
-
 if you face script execution policy error run below command:
 ```console
 Set-ExecutionPolicy Unrestricted -Scope Process
@@ -66,7 +63,6 @@ cd my_folder_name_or_path
 ```python
 pip install pipreqs
 ```
-
 ```console
 pipreqs --force
 ```
