@@ -4,6 +4,8 @@
 
 #### [Docs](https://precious-jalebi-a6ee2b.netlify.app/)
 
+#### [Development Docs](https://precious-jalebi-a6ee2b.netlify.app/development-docs/)
+
 ### Requirements:
 ---
  - [Python 3.10](https://www.python.org/downloads/release/python-3100/)

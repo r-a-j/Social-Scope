@@ -97,6 +97,7 @@ extra:
 
 nav:
   - Home: index.md
+  - Development Docs: development-docs.md
   - Scraper: scraper.md
   - Sentiment Analysis: sentiment-analysis.md
   - Image Recognition: image-recognition.md
@@ -108,4 +109,3 @@ nav:
   - Recommender Systems: recommender-systems.md
   - Time Series Analysis: time-series-analysis.md
   - Network Analysis: network-analysis.md
-  - Development Docs: development-docs.md
