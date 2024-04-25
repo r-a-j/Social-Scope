@@ -24,7 +24,7 @@ theme:
   logo: assets/logo.png    
   favicon: favicon.ico
   language: en
-  name: dracula
+  name: material
   features:
     - navigation.sections  
     - navigation.instant
