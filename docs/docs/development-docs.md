@@ -1,6 +1,6 @@
 # Development changes and references
 
-#### Theme options:
+#### Theme options
 
 ```python 
 theme="gradio/seafoam"
