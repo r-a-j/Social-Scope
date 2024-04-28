@@ -1,17 +1,9 @@
 import re
 
-def username(username):
+def username(s):
     
-    if not username:
-        return False, "Please input a username."
-    
-    if len(username) < 3 or len(username) > 30:
-        return False, "Invalid username (min 3 & max 30 characters)."
-        
-    if not re.match("^[a-zA-Z0-9.]*$", username):
-        return False, "Username can only contain letters, numbers, and periods."
-        
-    if any(char in r"""!"#$%&'()*+,-/:;<=>?@[\]^_`{|}~""" for char in username):
-        return False, "Username can't contain symbols or punctuation marks."
-    
-    return True, "Username is valid."
+    pattern = re.compile(r'^[a-zA-Z0-9._]{3,30}$')
+    if pattern.match(s):
+        return True, ""
+    else:
+        return False, "Username is invalid."
