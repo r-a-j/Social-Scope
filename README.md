@@ -2,6 +2,8 @@
 
 #### [Social Scope homepage](https://github.com/r-a-j/Social-Scope)
 
+![GitHub last commit](https://img.shields.io/github/last-commit/r-a-j/Social-Scope)
+
 #### [Docs](https://precious-jalebi-a6ee2b.netlify.app/)
 
 #### [Development Docs](https://precious-jalebi-a6ee2b.netlify.app/development-docs/)
