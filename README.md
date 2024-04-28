@@ -1,8 +1,10 @@
 <img src="https://github.com/r-a-j/Social-Scope/blob/main/assets/social-scope.png" />
 
-#### [Social Scope homepage](https://github.com/r-a-j/Social-Scope)
+<p align="center">
+  ![GitHub last commit](https://img.shields.io/github/last-commit/r-a-j/Social-Scope)
+</p>
 
-![GitHub last commit](https://img.shields.io/github/last-commit/r-a-j/Social-Scope)
+#### [Social Scope homepage](https://github.com/r-a-j/Social-Scope)
 
 #### [Docs](https://precious-jalebi-a6ee2b.netlify.app/)
 
