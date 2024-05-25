@@ -2,6 +2,8 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/r-a-j/Social-Scope)
 
+[![github-stats-card](https://kasroudra-stats-card.onrender.com/repo?user=r-a-j&repo=Social-Scope&layout=compact&theme=vue)](https://github.com/KasRoudra/github-stats-card)
+
 #### [Social Scope homepage](https://github.com/r-a-j/Social-Scope)
 
 #### [Docs](https://precious-jalebi-a6ee2b.netlify.app/)
