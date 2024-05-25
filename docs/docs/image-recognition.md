@@ -1,1 +1,1 @@
-﻿# ToDo: Add how to use the: Image Recognition: 🖼️ Identify objects, scenes, and people in images.
+﻿# ToDo: Add how to use the: Image Recognition: 🖼️ Identify objects & scenes in images.
