@@ -2,6 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/r-a-j/Social-Scope)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fd3d70b9e63c41789f0ceba9e24833ad)](https://app.codacy.com/gh/r-a-j/Social-Scope?utm_source=github.com&utm_medium=referral&utm_content=r-a-j/Social-Scope&utm_campaign=Badge_Grade)
 [![github-stats-card](https://kasroudra-stats-card.onrender.com/repo?user=r-a-j&repo=Social-Scope&layout=compact&theme=vue)](https://github.com/KasRoudra/github-stats-card)
 
 #### [Social Scope homepage](https://github.com/r-a-j/Social-Scope)
