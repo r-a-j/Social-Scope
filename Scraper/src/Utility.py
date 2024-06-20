@@ -1,4 +1,3 @@
-# utility.py
 import shutil
 
 
