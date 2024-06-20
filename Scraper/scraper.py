@@ -18,7 +18,7 @@ def download_user_data(target_username, shortcode, login_username, login_passwor
 
     zip_name = folder_path.stem
     zip_path = Utility.zip_directory(folder_path, zip_name)
-    
+
     return zip_path
 
 
@@ -26,36 +26,53 @@ def download_all(username, login_username, login_password):
     login_manager = LoginManager(login_username, login_password)
     login_manager.login()
     downloader = InstagramDataDownloader(login_manager)
-    
+
     return downloader.download_all(username)
 
 
-with gr.Blocks(theme='finlaymacklon/boxy_violet') as insta_scrape_gradio_zip:
+with gr.Blocks(
+    theme="finlaymacklon/boxy_violet", 
+    title="Social Scope"
+) as insta_scrape_gradio_zip:
+    gr.Markdown(Utility.get_string('app_logo_url_markdown'))
+    
     with gr.Tab("Post"):
         gr.Interface(
             fn=download_user_data,
             inputs=[
-                gr.Textbox(label="Target Instagram Username"),
-                gr.Textbox(label="Post Shortcode (optional)"),
-                gr.Textbox(label="Login Username"),
-                gr.Textbox(label="Login Password")
+                gr.Text(label="Target Instagram Username", type="text"),
+                gr.Text(label="Post Shortcode (optional)", type="text"),
+                gr.Text(label="Login Username", type="text"),
+                gr.Text(label="Login Password", type="password"),
             ],
             outputs=gr.File(label="Download", interactive=False),
-            title="Social Scope",
-            description="Download Instagram stories, highlights, and posts as .zip files."
+            title="Download Single Post",
+            description="Download Instagram stories, highlights, and posts as .zip files.",
+        )
+
+
+        post_images = gr.Gallery(
+            label="Generated images",
+            show_label=False,
+            elem_id="gallery",
+            columns=[3],
+            rows=[1],
+            object_fit="contain",
+            height="auto",
+            interactive=False
         )
 
     with gr.Tab("All"):
         gr.Interface(
             fn=download_all,
             inputs=[
-                gr.Textbox(label="Target Instagram Username"),
-                gr.Textbox(label="Username"),
-                gr.Textbox(label="Password")
+                gr.Text(label="Target Instagram Username", type="text"),
+                gr.Text(label="Username", type="text"),
+                gr.Text(label="Password", type="password"),
             ],
             outputs=gr.File(label="Download", interactive=False),
-            title="Instagram Data Downloader",
-            description="Download Instagram stories, highlights, and posts as .zip files."
+            title="Download All",
+            description="Download Instagram stories, highlights, and posts as .zip files.",
         )
 
 
