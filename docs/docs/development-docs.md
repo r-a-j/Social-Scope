@@ -9,7 +9,6 @@
     theme="finlaymacklon/boxy_violet"
     theme="ysharma/steampunk"
     theme="ParityError/Interstellar"
-    theme="ParityError/Interstellar"
     ```
 
 !!! Example
