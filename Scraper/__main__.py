@@ -1,5 +1,5 @@
-from Scraper import scraper
+from Scraper import Scraper
 
 
 def main():
-    scraper.launch_scraper_interface()
+    Scraper.launch_scraper_interface()

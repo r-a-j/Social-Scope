@@ -4,8 +4,9 @@ from Scraper.src.Utility import Utility
 
 
 class InstagramDataDownloader:
-    def __init__(self, login_manager):
-        self.loader = login_manager.get_loader()
+    def __init__(self):
+        self.loader = instaloader.Instaloader(download_video_thumbnails=False,
+                                              compress_json=False)
 
 
     def save_posts(self, username):
@@ -52,6 +53,6 @@ class InstagramDataDownloader:
         """Downloads all data (stories, highlights, posts) for a user and zips it."""
         user_dir, _, _, _ = DirectoryManager.create_directory_structure(username)
         self.save_posts(username)
-        self.save_story_highlights(username)
+        #self.save_story_highlights(username)
         zip_path = Utility.zip_directory(user_dir, user_dir.with_suffix('.zip').stem)
         return zip_path

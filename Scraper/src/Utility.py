@@ -1,6 +1,7 @@
 import shutil
 import json
 import os
+import re
 
 class Utility:
     @staticmethod
@@ -58,3 +59,12 @@ class Utility:
         video_extensions = ('.mp4', '.mov', '.avi')
         
         return Utility.get_file_by_extension(folder_path, video_extensions)
+    
+    
+    @staticmethod
+    def extract_shortcode(url: str) -> str:
+        """Extracts the shortcode from the given Instagram URL."""
+        pattern = r'^(?:https?:\/\/)?(?:www\.)?(?:instagram\.com(?:\/\w+)?\/(p|reel)\/)([\w-]+)(?:\/)?(\?.*)?$'
+        match = re.search(pattern, url)
+        
+        return match.group(1) if match else None
