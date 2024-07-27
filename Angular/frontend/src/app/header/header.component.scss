@@ -1,16 +1,18 @@
+@import '../../variables.scss';
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #fff;
+  background-color: $background-color;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   .logo {
     img {
       width: 100px;
       margin: 0 auto;
-      display: block; // Center the logo
+      display: block;
     }
   }
 
@@ -26,7 +28,7 @@
 
     a {
       text-decoration: none;
-      color: #000;
+      color: $black-color;
       font-weight: bold;
       position: relative;
       padding-bottom: 5px;
@@ -38,12 +40,12 @@
         bottom: 0;
         width: 0%;
         height: 2px;
-        background-color: #000000;
+        background-color: $black-color;
         transition: width 0.3s ease;
       }
 
       &:hover {
-        color: #000000;
+        color: $black-color;
 
         &::after {
           width: 100%;
@@ -54,38 +56,41 @@
 
   .auth-buttons {
     display: flex;
-
+  
     a {
+      display: inline-block;
       margin-left: 15px;
-      padding: 5px 15px;
+      padding: 10px 10px;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
+      font-size: $font-size-sm;
+      transition: background-color 0.3s;
     }
-
+  
     .sign-up {
       color: #000;
-
-      &:hover{
-        background-color: #229ae5;
-        color: #fff;
+      background-color: transparent;
+      border: 2px solid $black-color;
+  
+      &:hover {
+        background-color: $black-color;
+        color: $background-color;
       }
     }
-
+  
     .login {
-      color: #fff;
-      background-color: #13557f;
-      padding: 5px 15px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-
+      color: $background-color;
+      background-color: $black-color;
+      border: 2px solid $black-color;
+  
       &:hover {
-        background-color: #229ae5;
+        background-color: $secondary-color;
+        color: $black-color;
       }
     }
   }
 
-  // Mobile View
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -103,16 +108,16 @@
 
     .auth-buttons {
       flex-direction: column;
-      width: 100%;
       margin-top: 10px;
       align-items: center;
 
       a {
         margin-left: 0;
-        margin-top: 10px;
-        padding: 10px;
+        margin-top: $spacing-sm;
+        padding: $spacing-md $spacing-lg;
         width: 80%;
         text-align: center;
+        padding: 10px 10px;
       }
     }
   }

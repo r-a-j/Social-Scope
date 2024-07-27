@@ -168,4 +168,5 @@ cython_debug/
 .idea/inspectionProfiles/profiles_settings.xml
 .vscode/launch.json
 data/raw/
-Angular/frontend/.vscode/
+Angular/frontend/.vs
+Angular/frontend/.vscode
