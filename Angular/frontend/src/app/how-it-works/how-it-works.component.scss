@@ -131,18 +131,18 @@
     }
 
     .cta-button {
-      display: inline-block;
-      padding: $spacing-sm $spacing-md;
-      margin-top: 20px;
-      background-color: $secondary-color;
-      color: #fff;
+      padding: 10px 20px;
+      background-color: $black-color;
+      border: 2px solid $secondary-color;
+      color: $background-color;
       border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
 
       &:hover {
-        background-color: $black-color;
+        background-color: $secondary-color;
+        color: $black-color;
         border: 2px solid $secondary-color;
       }
     }
@@ -171,6 +171,10 @@
     .globe-container {
       width: 200px;
       height: 200px;
+    }
+
+    .cta-button {
+      display: flex;
     }
 
     .globe-content {
