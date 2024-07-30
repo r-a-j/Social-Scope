@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="form">
+    <h2 class="title">Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="input-container ic1">
+            <input type="email" id="email" formControlName="email" class="input" placeholder="" />
+            <div class="cut"></div>
+            <label class="iLabel" for="email">Email</label>
+            <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+                <small *ngIf="loginForm.controls['email'].errors?.['required']">Email is required</small>
+                <small *ngIf="loginForm.controls['email'].errors?.['email']">Invalid email</small>
+            </div>
+        </div>
+
+        <div class="input-container ic2">
+            <input type="password" id="password" formControlName="password" class="input" placeholder="" />
+            <div class="cut cut-short"></div>
+            <label class="iLabel" for="password">Password</label>
+            <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+                <small *ngIf="loginForm.controls['password'].errors?.['required']">Password is required</small>
+            </div>
+        </div>
+
+        <button class="submit" type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+    <p>Don't have an account? <a routerLink="/signup">Sign up here</a></p>
+</div>
+<app-footer></app-footer>

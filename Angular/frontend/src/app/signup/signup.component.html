@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="form">
+    <h2 class="title">Sign Up</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+        <div class="input-container ic1">
+            <input placeholder="" type="text" formControlName="firstname" class="input" id="firstname">
+            <div class="cut"></div>
+            <label class="iLabel" for="firstname">First name</label>
+            <div class="errors" *ngIf="signupForm.controls['firstname'].invalid && signupForm.controls['firstname'].touched">
+                <small *ngIf="signupForm.controls['firstname'].errors?.['required']">First name is required</small>
+            </div>
+        </div>
+
+        <div class="input-container ic2">
+            <input placeholder="" type="text" formControlName="lastname" class="input" id="lastname">
+            <div class="cut"></div>
+            <label class="iLabel" for="lastname">Last name</label>
+            <div class="errors" *ngIf="signupForm.controls['lastname'].invalid && signupForm.controls['lastname'].touched">
+                <small *ngIf="signupForm.controls['lastname'].errors?.['required']">Last name is required</small>
+            </div>
+        </div>
+        <div class="input-container ic2">
+            <input placeholder="" type="text" formControlName="email" class="input" id="email">
+            <div class="cut cut-short"></div>
+            <label class="iLabel" for="email">Email</label>
+            <div class="errors" *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].touched">
+                <small *ngIf="signupForm.controls['email'].errors?.['required']">Email is required</small>
+                <small *ngIf="signupForm.controls['email'].errors?.['email']">Invalid email</small>
+            </div>
+        </div>
+        <button class="submit" type="text">submit</button>
+        <p>Already have an account? <a routerLink="/login">Login here</a></p>
+    </form>
+</div>
+
+<app-footer></app-footer>
