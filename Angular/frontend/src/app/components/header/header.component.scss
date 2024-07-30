@@ -4,15 +4,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: $background-color;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px 50px;
+
+  .header-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    &.logo-nav {
+      justify-content: flex-start;
+    }
+
+    &.search-section {
+      justify-content: center;
+    }
+
+    &.auth-section {
+      justify-content: flex-end;
+    }
+  }
 
   .logo {
+    margin-right: 20px;
+
     img {
-      width: 100px;
-      margin: 0 auto;
-      display: block;
+      width: 40px;
     }
   }
 
@@ -23,72 +39,77 @@
     margin: 0;
 
     li {
-      margin: 0 15px;
+      margin: 0 20px;
     }
 
     a {
       text-decoration: none;
       color: $black-color;
       font-weight: bold;
-      position: relative;
-      padding-bottom: 5px;
-      cursor: pointer;
-
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0%;
-        height: 2px;
-        background-color: $black-color;
-        transition: width 0.3s ease;
-      }
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
 
       &:hover {
+        background-color: $secondary-color;
         color: $black-color;
-
-        &::after {
-          width: 100%;
-        }
+        border: 2px solid black;
       }
     }
   }
 
-  .auth-buttons {
+  .search-field {
+    width: 300px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    outline: none;
+    font-size: $font-size-md;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    &:focus {
+      border-color: $black-color;
+    }
+  }
+
+  .auth-section {
     display: flex;
-  
+    align-items: center;
+
+    .user-name {
+      margin-right: 0px;
+      font-size: $font-size-md;
+      color: $black-color;
+      font-weight: bolder;
+    }
+
     a {
-      display: inline-block;
       margin-left: 15px;
-      padding: 10px 10px;
-      border-radius: 5px;
+      padding: 10px 20px;
+      border-radius: 25px;
       text-decoration: none;
       font-weight: bold;
-      font-size: $font-size-sm;
       transition: background-color 0.3s;
-    }
-  
-    .sign-up {
-      color: #000;
-      background-color: transparent;
-      border: 2px solid $black-color;
-  
-      &:hover {
-        background-color: $black-color;
-        color: $background-color;
-        cursor: pointer;
+
+      &.sign-up {
+        background-color: transparent;
+        border: 2px solid $black-color;
+        color: $black-color;
+
+        &:hover {
+          background-color: $secondary-color;
+          color: $black-color;
+          border: 2px solid $black-color;
+        }
       }
-    }
-  
-    .login {
-      color: $background-color;
-      background-color: $black-color;
-      border: 2px solid $black-color;
-  
-      &:hover {
+
+      &.login {
         background-color: $secondary-color;
         color: $black-color;
+        border: 2px solid black;
+
+        &:hover {
+          background-color: darken($secondary-color, 10%);
+        }
       }
     }
   }
@@ -96,30 +117,39 @@
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+
+    .header-section {
+      flex-direction: column;
+      margin-bottom: 10px;
+
+      &.search-section {
+        order: 1; // Position the search bar below the logo and nav
+      }
+
+      &.auth-section {
+        order: 2; // Position the auth section below the search bar
+      }
+    }
 
     .nav ul {
       flex-direction: column;
-      align-items: center;
-      width: 100%;
-      margin-top: 10px;
 
       li {
         margin: 10px 0;
       }
     }
 
-    .auth-buttons {
-      flex-direction: column;
-      margin-top: 10px;
-      align-items: center;
+    .search-field {
+      width: 80%;
+      margin-bottom: 10px;
+    }
 
+    .auth-section {
       a {
-        margin-left: 0;
-        margin-top: $spacing-sm;
-        padding: $spacing-md $spacing-lg;
-        width: 80%;
-        text-align: center;
-        padding: 10px 10px;
+        margin: 5px 0;
+        width: 100%;
+        max-width: 200px;
       }
     }
   }

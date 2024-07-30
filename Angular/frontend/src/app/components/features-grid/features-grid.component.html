@@ -1,0 +1,9 @@
+<div class="features-grid-container">
+    <h2>Our Features</h2>
+    <div class="features-grid">
+        <button *ngFor="let feature of features" [ngClass]="{ 'feature-button': true, 'hot-feature': feature.isHot }"
+            (click)="navigateTo(feature.route)">
+            {{ feature.name }}
+        </button>
+    </div>
+</div>
