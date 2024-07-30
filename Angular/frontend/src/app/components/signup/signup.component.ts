@@ -1,20 +1,27 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 
+const imports = [
+  ReactiveFormsModule, 
+  CommonModule, 
+  RouterModule, 
+  HeaderComponent, 
+  FooterComponent
+];
+
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterModule, HeaderComponent, FooterComponent],
+  imports: imports,
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })
 export class SignupComponent {
-  signupForm: FormGroup;
+  public signupForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.signupForm = this.fb.group({
@@ -25,7 +32,7 @@ export class SignupComponent {
     });
   }
 
-  onSignup() {
+  public onSignup(): void {
     if (this.signupForm.valid) {
       // this.authService.signup(this.signupForm.value).subscribe(
       //   response => {

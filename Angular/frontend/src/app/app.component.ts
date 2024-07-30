@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { LandingComponent } from './landing/landing.component';
+import { LandingComponent } from './components/landing/landing.component';
 import { CommonModule } from '@angular/common';
-import { LoaderComponent } from './loader/loader.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +17,7 @@ import { LoaderComponent } from './loader/loader.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'Social Scope';
+  public title: string = 'Social Scope';
+  
   constructor(public router: Router) { }
 }

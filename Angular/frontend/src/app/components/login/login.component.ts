@@ -1,20 +1,27 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 
+const imports = [
+  ReactiveFormsModule, 
+  CommonModule, 
+  RouterModule, 
+  HeaderComponent, 
+  FooterComponent
+];
+
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterModule, HeaderComponent, FooterComponent],
+  imports: imports,
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  loginForm: FormGroup;
+  public loginForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
@@ -23,7 +30,7 @@ export class LoginComponent {
     });
   }
 
-  onLogin() {
+  public onLogin(): void {
     if (this.loginForm.valid) {
       // this.authService.login(this.loginForm.value).subscribe(
       //   response => {

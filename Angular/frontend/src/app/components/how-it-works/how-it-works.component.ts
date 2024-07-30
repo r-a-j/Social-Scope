@@ -1,10 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
+const imports = [
+  CommonModule
+];
+
 @Component({
   selector: 'app-how-it-works',
   standalone: true,
-  imports: [CommonModule],
+  imports: imports,
   templateUrl: './how-it-works.component.html',
   styleUrl: './how-it-works.component.scss',
 })
@@ -30,7 +34,7 @@ export class HowItWorksComponent {
     },
   ];
 
-  toggleAccordion(index: number) {
+  public toggleAccordion(index: number): void {
     this.activeIndex = this.activeIndex === index ? -1 : index;
   }
 }

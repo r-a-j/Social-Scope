@@ -1,0 +1,123 @@
+@import "../../../variables.scss";
+
+.features {
+  text-align: center;
+  margin-top: 100px;
+
+  h2 {
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-md;
+    color: $black-color;
+  }
+
+  .feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        img {
+          width: 70px;
+          height: 70px;
+          margin-bottom: $spacing-sm;
+        }
+
+        h2 {
+          font-size: $font-size-lg;
+          margin-bottom: $spacing-sm;
+          color: $black-color;
+        }
+
+        p {
+          font-size: $font-size-md;
+          color: $black-color;
+          margin: 0;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .feature-grid {
+      flex-direction: column;
+      align-items: center;
+
+      .box {
+        width: 90%;
+        height: auto;
+        margin-bottom: $spacing-md;
+        padding: $spacing-md $spacing-sm;
+
+        img {
+          width: 60px;
+          height: 60px;
+        }
+
+        h2 {
+          font-size: $font-size-md;
+        }
+
+        p {
+          font-size: $font-size-sm;
+        }
+      }
+    }
+  }
+}
+
+
+.box {
+  position: relative;
+  width: 260px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  z-index: 1;
+}
+
+.box .content {
+  position: relative;
+  width: 90%;
+  height: auto;
+  padding: 20px 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.box .content h2 {
+  font-size: 1.5rem;
+  color: $black-color;
+  margin-bottom: 10px;
+}
+
+.box .content img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.box .content p {
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.4;
+  color: $black-color;
+}

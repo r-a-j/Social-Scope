@@ -1,16 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { LoaderService } from '../services/loader.service';
+import { LoaderService } from '../../services/loader.service';
+
+const imports = [
+  CommonModule
+];
 
 @Component({
   selector: 'app-loader',
   standalone: true,
-  imports: [CommonModule],
+  imports: imports,
   templateUrl: './loader.component.html',
   styleUrl: './loader.component.scss'
 })
 export class LoaderComponent {
-  isLoading = false;
+  public isLoading: boolean = false;
 
   constructor(private loaderService: LoaderService) {
     this.loaderService.isLoading.subscribe((isLoading) => {
