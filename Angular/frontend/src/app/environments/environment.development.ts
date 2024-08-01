@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    apiUrl: 'http://localhost:8080/api/v1/',
-    authApiUrl: 'http://localhost:8080/auth/',
-    staticSourcesApiUrl: 'http://localhost:8080'
+    apiUrl: 'http://127.0.0.1:5000',
+    authApiUrl: 'http://127.0.0.1:5000/auth',
+    staticSourcesApiUrl: 'http://127.0.0.1:5000'
 };
