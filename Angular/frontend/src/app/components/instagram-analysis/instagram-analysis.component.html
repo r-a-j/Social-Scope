@@ -8,20 +8,45 @@
       <button class="btn btn-primary" (click)="loadPost()">Load Post</button>
     </div>
   </div>
+
+  <!-- Image Gallery Section -->
   <div class="row">
     <div class="col-md-12 gallery-section">
+      <h4 class="subheading">Images</h4>
       <section class="gallery">
         <div *ngFor="let image of images; let i = index" class="gallery__item">
-          <input type="radio" [id]="'img-' + (i + 1)" name="gallery" class="gallery__selector" [checked]="i === 0"/>
-          <img class="gallery__img" [src]="image.src" alt="Image {{i + 1}}"/>
+          <input type="radio" [id]="'img-' + (i + 1)" name="gallery" class="gallery__selector" [checked]="i === 0" />
+          <img class="gallery__img" [src]="image.src" alt="Image {{i + 1}}" />
         </div>
         <div class="gallery__thumbs">
           <label *ngFor="let image of images; let i = index" [for]="'img-' + (i + 1)" class="gallery__thumb">
-            <img [src]="image.thumb" alt="Thumbnail {{i + 1}}"/>
+            <img [src]="image.thumb || image.src" alt="Thumbnail {{i + 1}}" />
           </label>
         </div>
       </section>
-    </div>  
+    </div>
+  </div>
+
+  <!-- Video Gallery Section -->
+  <div class="row">
+    <div class="col-md-12 gallery-section">
+      <h4 class="subheading">Videos</h4>
+      <section class="gallery">
+        <div *ngFor="let video of videos; let i = index" class="gallery__item">
+          <input type="radio" [id]="'vid-' + (i + 1)" name="video-gallery" class="gallery__selector"
+            [checked]="i === 0" />
+          <video class="gallery__img" controls>
+            <source [src]="video.src" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="gallery__thumbs">
+          <label *ngFor="let video of videos; let i = index" [for]="'vid-' + (i + 1)" class="gallery__thumb">
+            <img [src]="video.thumb || video.src" alt="Thumbnail {{i + 1}}" />
+          </label>
+        </div>
+      </section>
+    </div>
   </div>
 </div>
 <app-footer></app-footer>
