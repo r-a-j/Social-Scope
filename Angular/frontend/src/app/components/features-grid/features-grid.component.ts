@@ -20,7 +20,7 @@ export class FeaturesGridComponent {
     { name: 'Instagram Analysis', route: '/instagram-analysis', isHot: false },
     { name: 'Comparison of multiple distributions', route: '/feature2', isHot: false },
     { name: 'RAG Analysis', route: '/feature3', isHot: false },
-    { name: 'LLM Decoding', route: '/feature4', isHot: true }, // Example of a "hot" feature
+    { name: 'LLM Decoding', route: '/feature4', isHot: false }, // Example of a "hot" feature
     { name: 'Feature 5', route: '/feature5', isHot: false },
     { name: 'Feature 1', route: '/feature1', isHot: false },
     { name: 'Feature 2', route: '/feature2', isHot: false },
