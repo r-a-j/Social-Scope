@@ -1,12 +1,7 @@
+@import '../../../variables.scss';
+
 * {
   box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
 }
 
 .container {
@@ -29,22 +24,24 @@ body {
 .input-section .form-control {
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid black;
   flex-grow: 1;
 }
 
 .input-section .btn {
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
+  background-color: $secondary-color;
+  color: black;
+  border: 2px solid black;
   cursor: pointer;
   margin-left: 10px;
+  font-weight: bold;
 }
 
 .input-section .btn:hover {
-  background-color: #0056b3;
+  background-color: darken($color: $secondary-color, $amount: 10%);
+  font-weight: bold;
 }
 
 .gallery-section {
@@ -83,7 +80,7 @@ body {
 
 .gallery__thumb img {
   width: 100px;
-  height: 67px;  // Maintain the aspect ratio of the images
+  height: 67px;
   object-fit: cover;
   border: 2px solid transparent;
   border-radius: 5px;
@@ -92,7 +89,7 @@ body {
 }
 
 .gallery__thumb img:hover, .gallery__thumb input:checked + label img {
-  border-color: #007bff;
+  border: 2px solid black;
 }
 
 .gallery__selector {
@@ -102,4 +99,12 @@ body {
 .gallery__selector:checked + .gallery__img {
   display: block;
   opacity: 1;
+}
+
+.heading {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: $text-color;
 }
