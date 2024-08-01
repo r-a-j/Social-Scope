@@ -13,8 +13,8 @@
   <div class="row gallery-row">
     <div class="col-md-12 gallery-section">
       <section class="gallery">
-        <div class="gallery__preview">
-          <img *ngIf="selectedImage" [src]="selectedImage.src" alt="Selected Image" class="gallery__img" />
+        <div class="gallery__preview" *ngIf="selectedImage" (click)="openModal(selectedImage)">
+          <img [src]="selectedImage.src" alt="Selected Image" class="gallery__img" />
         </div>
         <div class="gallery__thumbs">
           <div *ngFor="let image of images; let i = index" class="gallery__thumb">
@@ -29,8 +29,8 @@
   <div class="row gallery-row">
     <div class="col-md-12 gallery-section">
       <section class="gallery">
-        <div class="gallery__preview">
-          <video *ngIf="selectedVideo" [src]="selectedVideo.src" controls class="gallery__video"></video>
+        <div class="gallery__preview" *ngIf="selectedVideo" (click)="openModal(selectedVideo)">
+          <video [src]="selectedVideo.src" controls class="gallery__video"></video>
         </div>
         <div class="gallery__thumbs">
           <div *ngFor="let video of videos; let i = index" class="gallery__thumb">
@@ -40,5 +40,8 @@
       </section>
     </div>
   </div>
+
+  <!-- Modal Component -->
+  <app-instagram-media-modal *ngIf="showModal" [media]="modalMedia" (close)="closeModal()"></app-instagram-media-modal>
 </div>
 <app-footer></app-footer>

@@ -4,13 +4,15 @@ import { FooterComponent } from '../footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { InstagramService } from '../../services/instagram.service';
-import { InstagramMedia } from '../../models/instagram.media.model';
+import { InstagramMedia, InstagramMediaWithType } from '../../models/instagram.media.model';
+import { InstagramMediaModalComponent } from '../instagram-media-modal/instagram-media-modal.component';
 
 const imports = [
   HeaderComponent,
   FooterComponent,
   CommonModule,
-  FormsModule
+  FormsModule,
+  InstagramMediaModalComponent
 ];
 
 @Component({
@@ -22,10 +24,12 @@ const imports = [
 })
 export class InstagramAnalysisComponent {
   public postUrl: string = '';
-  public images: InstagramMedia[] = [];
-  public videos: InstagramMedia[] = [];
-  public selectedImage: InstagramMedia | null = null;
-  public selectedVideo: InstagramMedia | null = null;
+  public images: InstagramMediaWithType[] = [];
+  public videos: InstagramMediaWithType[] = [];
+  public selectedImage: InstagramMediaWithType | null = null;
+  public selectedVideo: InstagramMediaWithType | null = null;
+  public showModal: boolean = false;
+  public modalMedia: InstagramMediaWithType | null = null;
 
   constructor(private instagramService: InstagramService) { }
 
@@ -50,11 +54,21 @@ export class InstagramAnalysisComponent {
     }
   }
 
-  public selectImage(image: InstagramMedia): void {
+  public selectImage(image: InstagramMediaWithType): void {
     this.selectedImage = image;
   }
 
-  public selectVideo(video: InstagramMedia): void {
+  public selectVideo(video: InstagramMediaWithType): void {
     this.selectedVideo = video;
+  }
+
+  public openModal(media: InstagramMediaWithType): void {
+    this.modalMedia = media;
+    this.showModal = true;
+  }
+
+  public closeModal(): void {
+    this.showModal = false;
+    this.modalMedia = null;
   }
 }
