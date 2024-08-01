@@ -6,14 +6,14 @@ import { environment } from '../environments/environment.development';
 import { InstagramMedia, InstagramMediaWithType } from '../models/instagram.media.model';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class InstagramService {
-    private apiUrl = environment.apiUrl + '/extract-media';
+  private apiUrl = environment.apiUrl + '/extract-media';
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  extractMedia(url: string): Observable<{ images: InstagramMediaWithType[], videos: InstagramMediaWithType[] }> {
+  public extractMedia(url: string): Observable<{ images: InstagramMediaWithType[], videos: InstagramMediaWithType[] }> {
     return this.http.post<{ images: InstagramMediaWithType[], videos: InstagramMediaWithType[] }>(this.apiUrl, { url });
   }
 }

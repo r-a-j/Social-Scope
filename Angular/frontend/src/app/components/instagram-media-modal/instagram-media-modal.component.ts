@@ -25,7 +25,7 @@ export class InstagramMediaModalComponent {
   }
 
   onGenerateAI() {
-    console.log(`Generating AI for prompt: ${this.aiPrompt}`);
+    alert(`Generating AI for prompt: ${this.aiPrompt}`);
     // Add your logic to handle the AI generation here
   }
 }

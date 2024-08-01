@@ -37,8 +37,8 @@ export class InstagramAnalysisComponent {
     if (this.postUrl) {
       this.instagramService.extractMedia(this.postUrl).subscribe({
         next: data => {
-          this.images = data.images;
-          this.videos = data.videos;
+          this.images = data.images.map(image => ({ ...image, type: 'image' }));
+          this.videos = data.videos.map(video => ({ ...video, type: 'video' }));
           this.selectedImage = this.images.length > 0 ? this.images[0] : null;
           this.selectedVideo = this.videos.length > 0 ? this.videos[0] : null;
         },
