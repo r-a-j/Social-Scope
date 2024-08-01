@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/landing',
     pathMatch: 'full',
   },
   {
@@ -30,4 +30,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('../app/components/features/features.component').then((c) => c.FeaturesComponent),
   },
+  {
+    path: 'instagram-analysis',
+    title: 'Instagram Analysis',
+    loadComponent: () =>
+      import('../app/components/instagram-analysis/instagram-analysis.component').then((c) => c.InstagramAnalysisComponent),
+  },
+  { path: '**', redirectTo: '/home' }
 ];

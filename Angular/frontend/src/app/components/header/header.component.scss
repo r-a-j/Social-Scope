@@ -48,12 +48,13 @@
       font-weight: bold;
       padding: 5px 10px;
       border-radius: 5px;
-      transition: background-color 0.3s;
+      border: 2px solid transparent;
+      transition: background-color 0.3s, border-color 0.3s;
 
       &:hover {
         background-color: $secondary-color;
+        border-color: $black-color;
         color: $black-color;
-        border: 2px solid black;
       }
     }
   }

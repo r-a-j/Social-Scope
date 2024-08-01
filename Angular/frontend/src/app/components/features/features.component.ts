@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 import { FeaturesGridComponent } from '../features-grid/features-grid.component';
 
 const imports = [
-  FooterComponent, 
   HeaderComponent,
+  FooterComponent,
   FeaturesGridComponent
 ];
 

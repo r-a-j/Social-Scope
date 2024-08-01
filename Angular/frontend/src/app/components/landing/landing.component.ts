@@ -5,6 +5,7 @@ import { FeatureInfoComponent } from '../feature-info/feature-info.component';
 import { HowItWorksComponent } from '../how-it-works/how-it-works.component';
 import { TechnologyStackComponent } from '../technology-stack/technology-stack.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ScrollToTopComponent } from '../scroll-to-top/scroll-to-top.component';
 
 const imports = [
   HeroComponent, 
@@ -12,6 +13,7 @@ const imports = [
   FeatureInfoComponent, 
   HowItWorksComponent, 
   TechnologyStackComponent,
+  ScrollToTopComponent,
   FooterComponent
 ];
 

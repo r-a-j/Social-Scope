@@ -1,7 +1,9 @@
 @import '../src/variables.scss';
 
-body {
+body, html {
   margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: $primary-font;
   color: $text-color;
   background-color: $background-color;
@@ -37,4 +39,14 @@ button {
   width: 80%;
   margin: 0 auto;
   max-width: 1200px; // Optional: to cap the width on large screens
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make sure it takes full viewport height */
+}
+
+.main-content {
+  flex: 1; /* Grow to take available space */
 }

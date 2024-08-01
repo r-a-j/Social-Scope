@@ -17,7 +17,7 @@ const imports = [
 })
 export class FeaturesGridComponent {
   features = [
-    { name: 'Descriptive analysis of demographic data', route: '/feature1', isHot: false },
+    { name: 'Instagram Analysis', route: '/instagram-analysis', isHot: false },
     { name: 'Comparison of multiple distributions', route: '/feature2', isHot: false },
     { name: 'RAG Analysis', route: '/feature3', isHot: false },
     { name: 'LLM Decoding', route: '/feature4', isHot: true }, // Example of a "hot" feature

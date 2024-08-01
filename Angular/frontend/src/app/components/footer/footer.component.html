@@ -1,8 +1,10 @@
 <footer class="footer">
-  <div class="footer-cta">
-    <p>Ready to get started? Talk to us today</p>
-    <a href="#" class="cta-button">Get started</a>
-  </div>
+  <ng-template [ngIf]="isLandingPage">
+    <div class="footer-cta">
+      <p>Ready to get started? Talk to us today</p>
+      <a routerLink="/features" class="cta-button">Get started</a>
+    </div>
+  </ng-template>
   <div class="footer-main">
     <div class="footer-column">
       <img src="../../assets/logo-square-nobg.png" alt="Company Logo" class="footer-logo" />
