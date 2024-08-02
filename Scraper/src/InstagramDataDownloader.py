@@ -1,13 +1,35 @@
 import instaloader
+import time
 from Scraper.src.DirectoryManager import DirectoryManager
 from Scraper.src.Utility import Utility
 
-
 class InstagramDataDownloader:
-    def __init__(self):
-        self.loader = instaloader.Instaloader(download_video_thumbnails=False,
-                                              compress_json=False)
+    def __init__(self, username, password):
+        if not username or not password:
+            raise ValueError("Username and password must be provided.")
+        self.username = username
+        self.password = password
+        self.loader = instaloader.Instaloader(download_video_thumbnails=True, compress_json=False)
+        self._login()
 
+    def _login(self):
+        try:
+            # Attempt to load session
+            self.loader.load_session_from_file(self.username)
+            print(f"Session loaded for {self.username}")
+        except FileNotFoundError:
+            # If session file not found, log in with username and password
+            print(f"No session file found for {self.username}. Logging in with username and password.")
+            self.loader.context.log("Login required")
+            self.loader.login(self.username, self.password)
+            self.loader.save_session_to_file(self.username)
+
+    def _handle_rate_limit(self, response):
+        if response.status_code == 429:
+            print("Rate limit reached. Retrying after delay.")
+            time.sleep(600)  # Wait for 10 minutes before retrying
+            return True
+        return False
 
     def save_posts(self, username):
         """Saves all posts from a user's profile."""
@@ -15,20 +37,39 @@ class InstagramDataDownloader:
         profile = instaloader.Profile.from_username(self.loader.context, username)
 
         for post in profile.get_posts():
-            self.loader.download_post(post, target=posts_dir)
+            while True:
+                try:
+                    self.loader.download_post(post, target=posts_dir)
+                    break
+                except instaloader.exceptions.ConnectionException as e:
+                    if not self._handle_rate_limit(e):
+                        raise e
+                time.sleep(2)  # Add delay to avoid rate limiting
 
         return posts_dir
 
-
     def save_single_post(self, shortcode):
         """Saves a single post given its shortcode."""
-        post = instaloader.Post.from_shortcode(self.loader.context, shortcode)
+        while True:
+            try:
+                post = instaloader.Post.from_shortcode(self.loader.context, shortcode)
+                break
+            except instaloader.exceptions.ConnectionException as e:
+                if not self._handle_rate_limit(e):
+                    raise e
+        
         target_dir = DirectoryManager.BASE_DIR / f"{post.profile}_{shortcode}"
         target_dir.mkdir(parents=True, exist_ok=True)
 
-        self.loader.download_post(post, target=target_dir)
+        while True:
+            try:
+                self.loader.download_post(post, target=target_dir)
+                break
+            except instaloader.exceptions.ConnectionException as e:
+                if not self._handle_rate_limit(e):
+                    raise e
+        
         return target_dir
-
 
     def save_story_highlights(self, username):
         """Saves the story highlights of a user."""
@@ -37,17 +78,28 @@ class InstagramDataDownloader:
         user_id = profile.userid
 
         # Save current story
-        self.loader.download_stories(userids=[user_id], filename_target=stories_dir)
+        while True:
+            try:
+                self.loader.download_stories(userids=[user_id], filename_target=stories_dir)
+                break
+            except instaloader.exceptions.ConnectionException as e:
+                if not self._handle_rate_limit(e):
+                    raise e
 
         # Save all highlights
         for highlight in self.loader.get_highlights(profile):
             for item in highlight.get_items():
                 highlight_dir = highlights_dir / highlight.title
                 highlight_dir.mkdir(parents=True, exist_ok=True)
-                self.loader.download_storyitem(item, target=highlight_dir)
+                while True:
+                    try:
+                        self.loader.download_storyitem(item, target=highlight_dir)
+                        break
+                    except instaloader.exceptions.ConnectionException as e:
+                        if not self._handle_rate_limit(e):
+                            raise e
 
         return highlights_dir
-
 
     def download_all(self, username):
         """Downloads all data (stories, highlights, posts) for a user and zips it."""

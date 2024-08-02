@@ -5,6 +5,8 @@ from Scraper.src.GradioUtility import GradioUtility
 
 class LoginManager:
     def __init__(self, username, password):
+        if not username or not password:
+            raise ValueError("Username and password must be provided.")
         self.username = username
         self.password = password
         self.loader = instaloader.Instaloader()

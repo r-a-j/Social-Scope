@@ -170,3 +170,4 @@ cython_debug/
 data/raw/
 Angular/frontend/.vs
 Angular/frontend/.vscode
+API/python.env

@@ -60,11 +60,11 @@ class Utility:
         
         return Utility.get_file_by_extension(folder_path, video_extensions)
     
-    
+
     @staticmethod
     def extract_shortcode(url: str) -> str:
         """Extracts the shortcode from the given Instagram URL."""
-        pattern = r'^(?:https?:\/\/)?(?:www\.)?(?:instagram\.com(?:\/\w+)?\/(p|reel)\/)([\w-]+)(?:\/)?(\?.*)?$'
+        pattern = r'^(?:https?:\/\/)?(?:www\.)?instagram\.com\/(?:p|reel)\/([\w-]+)'
         match = re.search(pattern, url)
         
         return match.group(1) if match else None
