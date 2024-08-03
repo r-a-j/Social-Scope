@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment.development';
-import { InstagramMedia, InstagramMediaWithType } from '../models/instagram.media.model';
+import { InstagramMediaWithType } from '../models/instagram.media.model';
 
 @Injectable({
   providedIn: 'root'

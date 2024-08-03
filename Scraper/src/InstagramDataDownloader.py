@@ -3,26 +3,41 @@ import time
 from Scraper.src.DirectoryManager import DirectoryManager
 from Scraper.src.Utility import Utility
 
+
 class InstagramDataDownloader:
+    SESSION_DIR = "session"
+    
     def __init__(self, username, password):
         if not username or not password:
             raise ValueError("Username and password must be provided.")
         self.username = username
         self.password = password
-        self.loader = instaloader.Instaloader(download_video_thumbnails=True, compress_json=False)
+        self.loader = instaloader.Instaloader(download_video_thumbnails=True, compress_json=True)
+        self.session_file_path = f"{self.SESSION_DIR}/{self.username}"
         self._login()
 
     def _login(self):
         try:
             # Attempt to load session
-            self.loader.load_session_from_file(self.username)
+            self.loader.load_session_from_file(username=self.username, filename=self.session_file_path)
             print(f"Session loaded for {self.username}")
+            
         except FileNotFoundError:
             # If session file not found, log in with username and password
             print(f"No session file found for {self.username}. Logging in with username and password.")
             self.loader.context.log("Login required")
             self.loader.login(self.username, self.password)
-            self.loader.save_session_to_file(self.username)
+            self.loader.save_session_to_file(filename=self.session_file_path)
+            
+        except instaloader.exceptions.BadCredentialsException as e:
+            print(f"Invalid session file for {self.username}. Logging in with username and password.")
+            self.loader.context.log("Login required")
+            self.loader.login(self.username, self.password)
+            self.loader.save_session_to_file(filename=self.session_file_path)
+            
+        except Exception as e:
+            print(f"An error occurred during login: {e}")
+            raise e
 
     def _handle_rate_limit(self, response):
         if response.status_code == 429:
@@ -105,6 +120,6 @@ class InstagramDataDownloader:
         """Downloads all data (stories, highlights, posts) for a user and zips it."""
         user_dir, _, _, _ = DirectoryManager.create_directory_structure(username)
         self.save_posts(username)
-        #self.save_story_highlights(username)
+        self.save_story_highlights(username)
         zip_path = Utility.zip_directory(user_dir, user_dir.with_suffix('.zip').stem)
         return zip_path

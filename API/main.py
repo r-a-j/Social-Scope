@@ -4,7 +4,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from flask_restful import Api, Resource
 from flask_cors import CORS
 from Scraper.src.InstagramDataDownloader import InstagramDataDownloader
@@ -12,20 +12,17 @@ from Scraper.src.Utility import Utility
 from dotenv import load_dotenv
 
 
-# Load environment variables
 load_dotenv(dotenv_path="API\python.env")
 
 
 INSTAGRAM_USERNAME = os.getenv("INSTAGRAM_USERNAME")
 INSTAGRAM_PASSWORD = os.getenv("INSTAGRAM_PASSWORD")
+downloader = InstagramDataDownloader(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD)
 
 
 app = Flask(__name__, static_url_path="/data", static_folder="../data")
 CORS(app, resources={r"/extract-media": {"origins": "http://localhost:4200"}})
 api = Api(app)
-
-
-downloader = InstagramDataDownloader(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD)
 
 
 def extract_media(url):
