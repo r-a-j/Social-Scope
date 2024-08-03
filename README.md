@@ -10,6 +10,21 @@
 
 #### [Development Docs](https://precious-jalebi-a6ee2b.netlify.app/development-docs/)
 
+### Screenshots Demo:
+
+![image](https://github.com/user-attachments/assets/f763d5ea-13cf-4ccc-975b-9ed5f41296bd)
+
+![image](https://github.com/user-attachments/assets/e8d1ac9c-6212-4473-88ef-c4d538825ee8)
+
+![image](https://github.com/user-attachments/assets/69ee24d7-5ab1-4420-ba3e-f99b977ebd59)
+
+![image](https://github.com/user-attachments/assets/56851a7f-cd02-4eac-9d2d-0169d97c6a90)
+
+![image](https://github.com/user-attachments/assets/ae32dab9-8d46-46b7-b23a-070c5a11931e)
+
+![image](https://github.com/user-attachments/assets/88126986-fe75-405f-99fd-0d6f6b85dfe1)
+
+
 ### Requirements:
 ---
  - [Python 3.10](https://www.python.org/downloads/release/python-3100/)
