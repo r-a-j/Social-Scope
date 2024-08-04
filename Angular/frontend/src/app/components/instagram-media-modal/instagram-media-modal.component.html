@@ -2,20 +2,23 @@
   <div class="modal-content" (click)="$event.stopPropagation()">
     <div class="modal-header">
       <h2>Media Preview</h2>
-      <button class="close-btn" (click)="onClose()">×</button>
+      <button class="close-btn" (click)="onClose()">
+        <img src="../../../assets/icons/close.png" alt="Close">
+      </button>
     </div>
     <div class="modal-body">
       <div class="media-preview">
-        <img *ngIf="media?.type === 'image'" [src]="media?.src" alt="Media Preview" />
+        <img *ngIf="media?.type === 'image'" [src]="media?.src" alt="Media Preview">
         <video *ngIf="media?.type === 'video'" [src]="media?.src" controls></video>
       </div>
       <div class="ai-prompt">
         <label for="aiPrompt">Enter your prompt:</label>
-        <textarea id="aiPrompt" [(ngModel)]="aiPrompt" placeholder="Type your prompt here" cols="10" rows="7"></textarea>
+        <textarea id="aiPrompt" [(ngModel)]="aiPrompt" placeholder="Type your prompt here" cols="10"
+          rows="7"></textarea>
         <button class="btn btn-primary" (click)="onGenerateAI()">Generate AI</button>
       </div>
       <div class="right-image-placeholder">
-        <img src="../../../assets/placeholder-images/generate-ai-placeholder.png" alt="Placeholder Image" />
+        <img src="../../../assets/placeholder-images/generate-ai-placeholder.png" alt="Placeholder Image">
       </div>
     </div>
   </div>

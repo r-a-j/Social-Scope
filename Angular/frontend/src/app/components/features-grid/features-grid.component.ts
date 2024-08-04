@@ -1,11 +1,12 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { ScrollToTopComponent } from '../scroll-to-top/scroll-to-top.component';
 
 const imports = [
   RouterModule,
-  CommonModule
+  CommonModule,
+  ScrollToTopComponent
 ];
 
 @Component({
@@ -15,21 +16,39 @@ const imports = [
   templateUrl: './features-grid.component.html',
   styleUrl: './features-grid.component.scss'
 })
-export class FeaturesGridComponent {
+export class FeaturesGridComponent implements OnInit {
   features = [
-    { name: 'Instagram Analysis', route: '/instagram-analysis', isHot: false },
-    { name: 'Comparison of multiple distributions', route: '/feature2', isHot: false },
-    { name: 'RAG Analysis', route: '/feature3', isHot: false },
-    { name: 'LLM Decoding', route: '/feature4', isHot: false }, // Example of a "hot" feature
-    { name: 'Feature 5', route: '/feature5', isHot: false },
-    { name: 'Feature 1', route: '/feature1', isHot: false },
-    { name: 'Feature 2', route: '/feature2', isHot: false },
-    { name: 'Feature 3', route: '/feature3', isHot: false }
+    { name: 'Instagram Gen AI', route: '/instagram-analysis' },
+    { name: 'Sentiment Analysis', route: '/instagram-analysis' },
+    { name: 'Image Recognition', route: '/instagram-analysis' },
+    { name: 'Content Trend Analysis', route: '/instagram-analysis' },
+    { name: 'User Engagement Prediction', route: '/instagram-analysis' },
+    { name: 'Hashtag Analysis', route: '/instagram-analysis' },
+    { name: 'Recommender System', route: '/instagram-analysis' },
+    { name: 'Collect Instagram Data', route: '/instagram-analysis' },
+    { name: 'Exploratory Data Analysis', route: '/instagram-analysis' },
+    { name: 'Visualize Data', route: '/instagram-analysis' },
   ];
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: object,
+    @Inject(DOCUMENT) private document: Document
+  ) { }
 
-  navigateTo(route: string) {
+  public ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.scrollToTop();
+    }
+  }
+
+  public scrollToTop(): void {
+    this.renderer.setProperty(this.document.documentElement, 'scrollTop', 0);
+    this.renderer.setProperty(this.document.body, 'scrollTop', 0);
+  }
+
+  public navigateTo(route: string) {
     this.router.navigate([route]);
   }
 }

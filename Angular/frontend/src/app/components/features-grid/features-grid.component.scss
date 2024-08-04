@@ -29,19 +29,7 @@
         &:hover {
             background-color: darken($secondary-color, 10%);
         }
-    }
-
-    .hot-feature {
-        position: relative;
-        border: 2px solid $black-color;
-        background-color: #fff;
-        box-shadow: 0 0 30px $primary-color;
-    }
-
-    .hot-feature:hover{
-        background-color: $black-color;
-        color: #fff;
-    }
+    }    
 }
 
 @media (max-width: 768px) {

@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 const imports = [
-  CommonModule
+  CommonModule,
+  RouterModule
 ];
 
 @Component({
@@ -18,19 +20,19 @@ export class HowItWorksComponent {
   accordionItems = [
     {
       title: 'Empower Your Insights',
-      content: `Harness the power of advanced analytics to understand and connect with communities globally. Our open-source tools provide deep insights into social media trends and behaviors, helping you make data-driven decisions.`,
+      content: `Harness the power of advanced analytics to understand and connect with communities globally. This open-source tool provides deep insights into social media trends and behaviors, helping you make data-driven decisions.`,
     },
     {
-      title: 'Why use this tool??',
-      content: `Community driven and built by a community of passionate developers and data scientists. We are transparent and open. Our source code is freely available hence promoting transparency and collaboration. Designed for researchers, marketers, and influencers alike, our tools are accessible to all.`,
+      title: 'Why use this tool?',
+      content: `Built by a passionate software developer and data scientist. The source code is freely available hence promoting transparency and collaboration. Designed for researchers, marketers, and influencers. This tool is accessible to all.`,
     },
     {
-      title: 'Join Our Mission',
-      content: `We believe in the power of open-source software to democratize access to technology. Join us in building a more connected and informed world.`,
+      title: 'Join the mission',
+      content: `I believe in the power of open-source software to democratize access to technology. Join me in building a more connected and informed world.`,
     },
     {
       title: 'Get Involved',
-      content: `Contribute to Our Code. Help us improve and expand our features.`,
+      content: `Contribute to the Code. Help improve and expand the features.`,
     },
   ];
 

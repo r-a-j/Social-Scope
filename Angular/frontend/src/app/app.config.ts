@@ -5,6 +5,8 @@ import { routes } from './app.routes';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { loaderInterceptor } from './interceptors/loader.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
+import { NotificationService } from './services/notification.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,6 +14,8 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes), 
     provideHttpClient(withFetch()),
     provideHttpClient(withInterceptors([loaderInterceptor])),
-    importProvidersFrom([BrowserAnimationsModule])
+    importProvidersFrom([BrowserAnimationsModule]),
+    ScrollToTopComponent,
+    NotificationService
   ]
 };

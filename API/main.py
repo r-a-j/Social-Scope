@@ -21,7 +21,7 @@ downloader = InstagramDataDownloader(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD)
 
 
 app = Flask(__name__, static_url_path="/data", static_folder="../data")
-CORS(app, resources={r"/extract-media": {"origins": "http://localhost:4200"}})
+CORS(app, resources={r"/extract-media": {"origins": ["http://localhost:4200"]}})
 api = Api(app)
 
 
@@ -41,12 +41,16 @@ def extract_media(url):
         }
         for img in images
     ]
-    videos = [
-        {
-            "src": f"http://127.0.0.1:5000/{videos}",
-            "thumb": images[0]["thumb"],
-        }
-    ] if videos else []
+    videos = (
+        [
+            {
+                "src": f"http://127.0.0.1:5000/{videos}",
+                "thumb": images[0]["thumb"],
+            }
+        ]
+        if videos
+        else []
+    )
 
     return {"images": images, "videos": videos}
 

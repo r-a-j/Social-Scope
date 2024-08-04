@@ -4,8 +4,9 @@ import { FooterComponent } from '../footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { InstagramService } from '../../services/instagram.service';
-import { InstagramMedia, InstagramMediaWithType } from '../../models/instagram.media.model';
+import { InstagramMediaWithType } from '../../models/instagram.media.model';
 import { InstagramMediaModalComponent } from '../instagram-media-modal/instagram-media-modal.component';
+import { NotificationService } from '../../services/notification.service';
 
 const imports = [
   HeaderComponent,
@@ -31,7 +32,10 @@ export class InstagramAnalysisComponent {
   public showModal: boolean = false;
   public modalMedia: InstagramMediaWithType | null = null;
 
-  constructor(private instagramService: InstagramService) { }
+  constructor(
+    private instagramService: InstagramService,
+    private notificationService: NotificationService
+  ) { }
 
   public loadPost(): void {
     if (this.postUrl) {
@@ -50,7 +54,7 @@ export class InstagramAnalysisComponent {
         }
       });
     } else {
-      alert('Please enter a valid Instagram post URL.');
+      this.notificationService.error('Please provide a valid instagram post URL');
     }
   }
 

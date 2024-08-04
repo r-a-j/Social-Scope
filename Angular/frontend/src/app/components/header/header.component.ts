@@ -11,5 +11,5 @@ const imports = [RouterModule];
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-
+  public userWelcomeMessage: string = '';
 }

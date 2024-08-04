@@ -36,5 +36,8 @@ export const routes: Routes = [
     loadComponent: () =>
       import('../app/components/instagram-analysis/instagram-analysis.component').then((c) => c.InstagramAnalysisComponent),
   },
-  { path: '**', redirectTo: '/home' }
+  { 
+    path: '**', 
+    redirectTo: '/home' 
+  }
 ];
