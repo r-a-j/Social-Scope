@@ -55,6 +55,12 @@ export const routes: Routes = [
       import('../app/components/reel-analysis-dashboard/reel-analysis-dashboard.component').then((c) => c.ReelAnalysisDashboardComponent),
   },
   {
+    path: 'about',
+    title: 'About',
+    loadComponent: () =>
+      import('../app/components/about/about.component').then((c) => c.AboutComponent),
+  },
+  {
     path: '**',
     redirectTo: '/home'
   }
