@@ -2,9 +2,10 @@
     <h2>Features</h2>
     <div class="features-grid">
         <ng-container *ngFor="let feature of features">
-            <button class="feature-button" (click)="navigateTo(feature.route)">
-                {{ feature.name }}
-            </button>
+            <div class="feature-card">
+                <span class="feature-card__title">{{ feature.name }}</span>
+                <button class="feature-card__button" (click)="navigateTo(feature.route)">Explore</button>
+            </div>
         </ng-container>
     </div>
 </div>
