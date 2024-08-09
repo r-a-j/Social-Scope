@@ -36,8 +36,26 @@ export const routes: Routes = [
     loadComponent: () =>
       import('../app/components/instagram-analysis/instagram-analysis.component').then((c) => c.InstagramAnalysisComponent),
   },
-  { 
-    path: '**', 
-    redirectTo: '/home' 
+  {
+    path: 'public-reaction',
+    title: 'Public Reaction',
+    loadComponent: () =>
+      import('../app/components/public-reaction/public-reaction.component').then((c) => c.PublicReactionComponent),
+  },
+  {
+    path: 'sentiment-analysis',
+    title: 'Sentiment Analysis',
+    loadComponent: () =>
+      import('../app/components/sentiment-analysis/sentiment-analysis.component').then((c) => c.SentimentAnalysisComponent),
+  },
+  {
+    path: 'reel-analysis-dashboard',
+    title: 'Reel Analysis Dashboard',
+    loadComponent: () =>
+      import('../app/components/reel-analysis-dashboard/reel-analysis-dashboard.component').then((c) => c.ReelAnalysisDashboardComponent),
+  },
+  {
+    path: '**',
+    redirectTo: '/home'
   }
 ];

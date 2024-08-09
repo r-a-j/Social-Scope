@@ -19,15 +19,17 @@ const imports = [
 export class FeaturesGridComponent implements OnInit {
   features = [
     { name: 'Instagram Gen AI', route: '/instagram-analysis' },
-    { name: 'Sentiment Analysis', route: '/instagram-analysis' },
-    { name: 'Image Recognition', route: '/instagram-analysis' },
-    { name: 'Content Trend Analysis', route: '/instagram-analysis' },
-    { name: 'User Engagement Prediction', route: '/instagram-analysis' },
-    { name: 'Hashtag Analysis', route: '/instagram-analysis' },
-    { name: 'Recommender System', route: '/instagram-analysis' },
-    { name: 'Collect Instagram Data', route: '/instagram-analysis' },
-    { name: 'Exploratory Data Analysis', route: '/instagram-analysis' },
-    { name: 'Visualize Data', route: '/instagram-analysis' },
+    { name: 'Public Reaction', route: '/public-reaction' },
+    { name: 'Sentiment Analysis', route: '/sentiment-analysis' },    
+    { name: 'Reel Analysis Dashboard', route: '/reel-analysis-dashboard' },
+    // { name: 'Image Recognition', route: '/instagram-analysis' },
+    // { name: 'Content Trend Analysis', route: '/instagram-analysis' },
+    // { name: 'User Engagement Prediction', route: '/instagram-analysis' },
+    // { name: 'Hashtag Analysis', route: '/instagram-analysis' },
+    // { name: 'Recommender System', route: '/instagram-analysis' },
+    // { name: 'Collect Instagram Data', route: '/instagram-analysis' },
+    // { name: 'Exploratory Data Analysis', route: '/instagram-analysis' },
+    // { name: 'Visualize Data', route: '/instagram-analysis' },
   ];
 
   constructor(
