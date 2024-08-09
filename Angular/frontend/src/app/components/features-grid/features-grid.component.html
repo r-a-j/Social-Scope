@@ -1,9 +1,10 @@
 <div class="features-grid-container">
     <h2>Features</h2>
     <div class="features-grid">
-        <button *ngFor="let feature of features" class="feature-button"
-            (click)="navigateTo(feature.route)">
-            {{ feature.name }}
-        </button>
+        <ng-container *ngFor="let feature of features">
+            <button class="feature-button" (click)="navigateTo(feature.route)">
+                {{ feature.name }}
+            </button>
+        </ng-container>
     </div>
 </div>
