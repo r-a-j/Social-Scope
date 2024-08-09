@@ -29,6 +29,7 @@
     box-shadow: 12px 12px 0 #000;
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
+    border-radius: 10px;
 
     &:hover {
         transform: translate(-5px, -5px);

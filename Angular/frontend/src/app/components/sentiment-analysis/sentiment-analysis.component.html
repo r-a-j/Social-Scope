@@ -1,5 +1,56 @@
 <app-header></app-header>
 <div class="container">
-    <p>sentiment-analysis works!</p>
+    <div class="sentiment-analysis-container">
+        <h2>Social Scope: Sentiment Analysis Feature</h2>
+        <p class="objective">
+            <strong>Objective:</strong><br>
+            To evaluate whether the comments on an Instagram reel effectively respond to the question posed by the
+            content creator at the end of the reel. This analysis will provide insights into audience engagement and the
+            relevance of the content to the viewers.
+        </p>
+
+        <div class="target-reel">
+            <h3>Target Reel:</h3>
+            <a href="https://www.instagram.com/reel/C-aVmEwAyEX/?igsh=ZDkyNHR2ZzJhMXNu" target="_blank">Instagram Reel:
+                Did the comments answer the question?</a>
+        </div>
+
+        <div class="approach">
+            <h3>Approach:</h3>
+            <ul>
+                <li><strong>Comment Extraction:</strong>
+                    <ul>
+                        <li>Utilize the Instaloader Python package to extract all comments from the reel.</li>
+                        <li>Run a scheduled batch job every 12 hours to extract the latest comments and update the
+                            database.</li>
+                    </ul>
+                </li>
+                <li><strong>Data Analysis:</strong>
+                    <ul>
+                        <li>Compile the extracted comments along with other relevant post data.</li>
+                        <li>Utilize the latest language model (LLM, LAMMA 3.1) to generate a summary or "gist" of the
+                            overall sentiment and engagement reflected in the comments.</li>
+                        <li>Evaluate whether the audience effectively addressed the question posed in the reel.</li>
+                    </ul>
+                </li>
+                <li><strong>Post-Analysis Reporting:</strong>
+                    <ul>
+                        <li>Automatically generate and send a detailed analysis report to the Instagram account owner
+                            via email.</li>
+                        <li>The report will include insights on audience engagement, suggestions for future content
+                            creation, and recommendations for similar topics that align with audience interests.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="outcome">
+            <h3>Outcome:</h3>
+            <p>
+                By leveraging AI-powered sentiment analysis, content creators can gain a deeper understanding of how
+                their audience interacts with their posts and receive actionable insights to improve future content.
+            </p>
+        </div>
+    </div>
 </div>
 <app-footer></app-footer>

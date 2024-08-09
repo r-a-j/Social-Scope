@@ -91,7 +91,7 @@
 }
 
 .gallery__thumb img:hover {
-  border-color: #007bff;
+  border-color: #000;
 }
 
 .heading {
@@ -139,5 +139,121 @@
   .gallery__img,
   .gallery__video {
     max-height: 300px;
+  }
+}
+
+.instagram-ai-feature {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  box-shadow: 8px 8px 0 #000;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.instagram-ai-feature:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 12px 12px 0 #000;
+}
+
+.instagram-ai-feature h2 {
+  font-size: 28px;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-ai-feature h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 3px;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+.instagram-ai-feature:hover h2::after {
+  transform: translateX(0);
+}
+
+.instagram-ai-feature h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.instagram-ai-feature p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.instagram-ai-feature ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.instagram-ai-feature ol li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.instagram-ai-feature ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.instagram-ai-feature ul li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.instagram-ai-feature a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.instagram-ai-feature a:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .instagram-ai-feature {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .instagram-ai-feature h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .instagram-ai-feature h3 {
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+  }
+
+  .instagram-ai-feature p,
+  .instagram-ai-feature ol li,
+  .instagram-ai-feature ul li {
+    font-size: 14px;
   }
 }
