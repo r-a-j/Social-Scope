@@ -7,6 +7,7 @@ import { loaderInterceptor } from './interceptors/loader.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 import { NotificationService } from './services/notification.service';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([loaderInterceptor])),
     importProvidersFrom([BrowserAnimationsModule]),
     ScrollToTopComponent,
-    NotificationService
+    NotificationService,
+    ErrorInterceptor
   ]
 };

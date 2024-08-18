@@ -7,6 +7,7 @@ import { InstagramService } from '../../services/instagram.service';
 import { InstagramMediaWithType } from '../../models/instagram.media.model';
 import { InstagramMediaModalComponent } from '../instagram-media-modal/instagram-media-modal.component';
 import { NotificationService } from '../../services/notification.service';
+import { FormValidationService } from '../../services/validation.service';
 
 const imports = [
   HeaderComponent,
@@ -34,11 +35,12 @@ export class InstagramAnalysisComponent {
 
   constructor(
     private instagramService: InstagramService,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private formValidationService: FormValidationService
   ) { }
 
   public loadPost(): void {
-    if (this.postUrl) {
+    if (this.formValidationService.isValidInstagramUrl(this.postUrl)) {
       this.instagramService.extractMedia(this.postUrl).subscribe({
         next: data => {
           this.images = data.images.map(image => ({ ...image, type: 'image' }));
@@ -47,14 +49,12 @@ export class InstagramAnalysisComponent {
           this.selectedVideo = this.videos.length > 0 ? this.videos[0] : null;
         },
         error: error => {
-          console.error('Error fetching media:', error);
+          this.notificationService.error(error.error.message);
         },
-        complete: () => {
-          console.log('Media fetching completed.');
-        }
+        complete: () => { }
       });
     } else {
-      this.notificationService.error('Please provide a valid instagram post URL');
+      this.notificationService.error('Please provide a valid Instagram post or reel URL.');
     }
   }
 

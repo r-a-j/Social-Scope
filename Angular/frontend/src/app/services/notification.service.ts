@@ -18,18 +18,26 @@ export class NotificationService {
                 },
                 types: [
                     {
-                        type: 'warning',
-                        background: 'orange',
+                        type: 'info',
+                        background: '#5E00FF',
                         duration: 5000,
-                        icon: {
-                            className: 'material-icons',
-                            tagName: 'i',
-                            text: 'warning'
-                        }
+                        dismissible: true
+                    },
+                    {
+                        type: 'warning',
+                        background: '#AE8F13',
+                        duration: 5000,
+                        dismissible: true
                     },
                     {
                         type: 'error',
-                        background: 'indianred',
+                        background: '#C6394A',
+                        duration: 5000,
+                        dismissible: true
+                    },
+                    {
+                        type: 'success',
+                        background: '#1EA966',
                         duration: 5000,
                         dismissible: true
                     }
@@ -42,6 +50,33 @@ export class NotificationService {
         if (this.notyf) {
             this.notyf.open({
                 type: 'error',
+                message: message
+            });
+        }
+    }
+
+    public success(message: string): void {
+        if (this.notyf) {
+            this.notyf.open({
+                type: 'success',
+                message: message
+            });
+        }
+    }
+
+    public warning(message: string): void {
+        if (this.notyf) {
+            this.notyf.open({
+                type: 'warning',
+                message: message
+            });
+        }
+    }
+    
+    public information(message: string): void {
+        if (this.notyf) {
+            this.notyf.open({
+                type: 'info',
                 message: message
             });
         }
