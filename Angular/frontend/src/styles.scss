@@ -50,3 +50,27 @@ button {
 .main-content {
   flex: 1; /* Grow to take available space */
 }
+
+.notification-info{
+  background-color: #5E00FF;
+  color: #000;
+  font-weight: bolder;
+}
+
+.notification-warning{
+  background-color: #ffd700;
+  color: #000;
+  font-weight: bolder;
+}
+
+.notification-error{
+  background-color: #C6394A;
+  color: #000;
+  font-weight: bolder;
+}
+
+.notification-success{
+  background-color: #1EA966;
+  color: #000;
+  font-weight: bolder;
+}

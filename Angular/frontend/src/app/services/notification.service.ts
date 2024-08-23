@@ -19,29 +19,29 @@ export class NotificationService {
                 types: [
                     {
                         type: 'info',
-                        background: '#5E00FF',
-                        duration: 5000,
-                        dismissible: true
+                        duration: 8000,
+                        dismissible: true,
+                        className: 'notification-info',
                     },
                     {
                         type: 'warning',
-                        background: '#AE8F13',
                         duration: 5000,
-                        dismissible: true
+                        dismissible: true,
+                        className: 'notification-warning',
                     },
                     {
                         type: 'error',
-                        background: '#C6394A',
                         duration: 5000,
-                        dismissible: true
+                        dismissible: true,
+                        className: 'notification-error',
                     },
                     {
                         type: 'success',
-                        background: '#1EA966',
                         duration: 5000,
-                        dismissible: true
+                        dismissible: true,
+                        className: 'notification-success',
                     }
-                ]
+                ],
             });
         }
     }

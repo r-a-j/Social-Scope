@@ -49,7 +49,7 @@ export class InstagramAnalysisComponent {
           this.selectedVideo = this.videos.length > 0 ? this.videos[0] : null;
         },
         error: error => {
-          this.notificationService.error(error.error.message);
+          this.notificationService.error(error.message);
         },
         complete: () => { }
       });
