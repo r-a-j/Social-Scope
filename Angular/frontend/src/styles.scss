@@ -52,25 +52,30 @@ button {
 }
 
 .notification-info{
-  background-color: #5E00FF;
-  color: #000;
+  background-color: rgb(48, 134, 235);
+  color: rgb(251 255 250);
   font-weight: bolder;
+  border: 2px solid black;
 }
 
 .notification-warning{
-  background-color: #ffd700;
-  color: #000;
+  background-color: rgb(255, 215, 0);
+  color: rgb(0, 0, 0);
   font-weight: bolder;
+  border: 2px solid black;
+  
 }
 
 .notification-error{
-  background-color: #C6394A;
-  color: #000;
+  background-color: rgb(238, 57, 52);
+  color: rgb(251 255 250);
   font-weight: bolder;
+  border: 2px solid black;
 }
 
 .notification-success{
-  background-color: #1EA966;
-  color: #000;
+  background-color: rgb(68, 202, 91);
+  color: rgb(251 255 250);
   font-weight: bolder;
+  border: 2px solid black;
 }

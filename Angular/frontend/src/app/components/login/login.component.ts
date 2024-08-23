@@ -2,15 +2,11 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FooterComponent } from '../footer/footer.component';
-import { HeaderComponent } from '../header/header.component';
 
 const imports = [
   ReactiveFormsModule,
   CommonModule,
-  RouterModule,
-  HeaderComponent,
-  FooterComponent
+  RouterModule
 ];
 
 @Component({

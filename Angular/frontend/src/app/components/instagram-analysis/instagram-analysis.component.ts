@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { InstagramService } from '../../services/instagram.service';
@@ -10,8 +8,6 @@ import { NotificationService } from '../../services/notification.service';
 import { FormValidationService } from '../../services/validation.service';
 
 const imports = [
-  HeaderComponent,
-  FooterComponent,
   CommonModule,
   FormsModule,
   InstagramMediaModalComponent

@@ -2,15 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ScrollToTopComponent } from '../scroll-to-top/scroll-to-top.component';
-import { FooterComponent } from '../footer/footer.component';
-import { HeaderComponent } from '../header/header.component';
 
 const imports = [
   RouterModule,
   CommonModule,
-  ScrollToTopComponent,
-  HeaderComponent,
-  FooterComponent,
+  ScrollToTopComponent    
 ];
 
 @Component({
