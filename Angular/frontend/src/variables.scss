@@ -2,7 +2,7 @@
 $primary-color: #007bff;
 $secondary-color: #ffd700;
 $background-color: #ffffff;
-$black-color:#000;
+$black-color: #000;
 $text-color: #333;
 $muted-color: #666;
 $border-color: rgba(0, 0, 0, 0.1);
@@ -13,6 +13,7 @@ $secondary-font: 'Georgia', serif;
 
 // Font Sizes
 $font-size-base: 16px;
+$font-size-xs: 0.75rem; // 14px
 $font-size-sm: 0.875rem; // 14px
 $font-size-md: 1rem; // 16px
 $font-size-lg: 1.25rem; // 20px

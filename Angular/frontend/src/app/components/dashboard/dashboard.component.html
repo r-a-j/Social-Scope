@@ -1,0 +1,40 @@
+<div class="dashboard-container">
+  <!-- Profile Section -->
+  <div class="profile-section">
+    <div class="profile-avatar">{{ userName[0] }}</div>
+    <div class="profile-info">
+      <h2 class="profile-name">{{ userName }}</h2>
+      <p class="profile-email">{{ userEmail }}</p>
+    </div>
+  </div>
+
+  <!-- Posts Section -->
+  <div class="posts-section">
+    <h3>User Posts</h3>
+    <div class="post" *ngFor="let post of posts">
+      <h4 class="post-title">{{ post.caption || post.description }}</h4>
+      <p class="post-description">{{ post.description }}</p>
+      <div class="post-meta">
+        <span class="post-location" *ngIf="post.location">{{ post.location }}</span>
+        <span class="post-likes">Likes: {{ post.likeCount }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Media Section -->
+  <div class="media-section">
+    <h3>Media Gallery</h3>
+    <div class="media-grid">
+      <div class="media-card" *ngFor="let group of groupedMedia">
+        <div class="media-card-header" (click)="openMediaModal(group)">
+          <h4>{{ group.date | date: 'longDate' }}</h4>
+          <div class="media-thumbnails">
+            <img *ngFor="let image of group.images.slice(0, 4)" [src]="image.url" alt="Thumbnail"
+              class="media-thumbnail">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-media-modal *ngIf="selectedGroup" [group]="selectedGroup" (close)="closeMediaModal()"></app-media-modal>
+</div>

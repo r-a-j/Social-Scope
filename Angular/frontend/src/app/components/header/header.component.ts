@@ -1,7 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-const imports = [RouterModule];
+const imports = [
+  RouterModule,
+  CommonModule
+];
 
 @Component({
   selector: 'app-header',
@@ -11,5 +15,6 @@ const imports = [RouterModule];
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  public userWelcomeMessage: string = '';
+  public isLoggedIn = true;
+  public userName = 'John Doe';
 }

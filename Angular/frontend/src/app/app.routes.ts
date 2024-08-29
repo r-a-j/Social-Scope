@@ -71,6 +71,13 @@ export const routes: Routes = [
       import('../app/components/about/about.component').then((c) => c.AboutComponent),
   },
   {
+    path: 'dashboard',
+    title: 'Dashboard',
+    data: { breadcrumb: 'Dashboard' },
+    loadComponent: () =>
+      import('../app/components/dashboard/dashboard.component').then((c) => c.DashboardComponent),
+  },
+  {
     path: '**',
     redirectTo: '/home'
   }

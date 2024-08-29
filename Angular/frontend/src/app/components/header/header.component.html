@@ -15,8 +15,17 @@
     <input type="text" class="search-field" placeholder="Search..." />
   </div>
   <div class="header-section auth-section">
-    <span class="user-name">{{userWelcomeMessage}}</span>
-    <a routerLink="/signup" class="sign-up">Sign Up</a>
-    <a routerLink="/login" class="login">Login</a>
+    <ng-container *ngIf="!isLoggedIn; else loggedInTemplate">
+      <a routerLink="/signup" class="sign-up">Sign Up</a>
+      <a routerLink="/login" class="login">Login</a>
+    </ng-container>
+
+    <ng-template #loggedInTemplate>
+      <div class="profile-badge">
+        <a routerLink="/dashboard">
+          <span class="user-name">{{userName}}</span>
+        </a>
+      </div>
+    </ng-template>
   </div>
 </header>

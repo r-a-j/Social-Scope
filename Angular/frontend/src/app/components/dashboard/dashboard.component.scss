@@ -1,0 +1,212 @@
+@import '../../../variables.scss';
+
+.dashboard-container {
+    padding: $spacing-lg;
+    background-color: $background-color;
+
+    .media-section {
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: $spacing-md;
+
+            .media-card {
+                background-color: lighten($secondary-color, 40%);
+                border-radius: 10px;
+                padding: $spacing-md;
+                cursor: pointer;
+                transition: box-shadow 0.3s ease;
+
+                &:hover {
+                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                }
+
+                .media-card-header {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .media-thumbnails {
+                    display: flex;
+                    gap: $spacing-xs;
+                    margin-top: $spacing-sm;
+
+                    .media-thumbnail {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 5px;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    background-color: $primary-color;
+    padding: $spacing-md;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: $spacing-lg;
+
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+        background-color: $secondary-color;
+        color: $black-color;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-size-xl;
+        font-weight: bold;
+        margin-right: $spacing-md;
+    }
+
+    .profile-info {
+        .profile-name {
+            font-size: $font-size-lg;
+            margin: 0;
+        }
+
+        .profile-email {
+            font-size: $font-size-sm;
+            color: $muted-color;
+        }
+    }
+}
+
+.posts-section {
+    margin-bottom: $spacing-lg;
+
+    h3 {
+        font-size: $font-size-lg;
+        margin-bottom: $spacing-md;
+        color: $text-color;
+    }
+
+    .post {
+        background-color: lighten($primary-color, 40%);
+        padding: $spacing-md;
+        margin-bottom: $spacing-md;
+        border-radius: 5px;
+        border: 1px solid $border-color;
+
+        .post-title {
+            font-size: $font-size-md;
+            margin: 0 0 $spacing-sm 0;
+            color: $text-color;
+        }
+
+        .post-description {
+            font-size: $font-size-sm;
+            color: $muted-color;
+            margin-bottom: $spacing-sm;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: $font-size-xs;
+            color: $muted-color;
+
+            .post-location {
+                font-weight: bold;
+            }
+
+            .post-likes {
+                font-weight: bold;
+                color: darken($primary-color, 20%);
+            }
+        }
+    }
+}
+
+.media-section {
+    h3 {
+        font-size: $font-size-lg;
+        margin-bottom: $spacing-md;
+        color: $text-color;
+    }
+
+    .media-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: $spacing-md;
+
+        .media-item {
+            background-color: $secondary-color;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+
+            .media-image,
+            .media-video {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on mobile */
+    }
+
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .profile-avatar {
+            margin-right: 0;
+            margin-bottom: $spacing-sm;
+        }
+
+        .profile-info {
+            .profile-name {
+                font-size: $font-size-md;
+            }
+
+            .profile-email {
+                font-size: $font-size-xs;
+            }
+        }
+    }
+
+    .posts-section {
+        .post {
+            .post-title {
+                font-size: $font-size-sm;
+            }
+
+            .post-description {
+                font-size: $font-size-xs;
+            }
+
+            .post-meta {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .post-location,
+                .post-likes {
+                    font-size: $font-size-xs;
+                }
+            }
+        }
+    }
+
+    .media-section {
+        .media-grid {
+            grid-template-columns: 1fr;
+            /* Stack items vertically */
+        }
+    }
+}

@@ -4,17 +4,15 @@ import { LandingComponent } from './components/landing/landing.component';
 import { CommonModule } from '@angular/common';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 
 const imports = [
-  RouterOutlet, 
-  LandingComponent, 
+  RouterOutlet,
+  LandingComponent,
   CommonModule,
   ScrollToTopComponent,
   NgxSpinnerModule,
-  BreadcrumbComponent,
   HeaderComponent,
   FooterComponent
 ];
@@ -28,6 +26,6 @@ const imports = [
 })
 export class AppComponent {
   public title: string = 'Social Scope';
-  
+
   constructor(public router: Router) { }
 }
