@@ -1,68 +1,53 @@
-import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
 import { MediaGroupModel } from '../../models/media.group.model';
 import { CommonModule } from '@angular/common';
-import { ImageModel } from '../../models/image.model';
-import { VideoModel } from '../../models/video.model';
-
-const imports = [CommonModule];
 
 @Component({
   selector: 'app-media-modal',
   standalone: true,
-  imports: imports,
+  imports: [CommonModule],
   templateUrl: './media-modal.component.html',
-  styleUrl: './media-modal.component.scss'
+  styleUrls: ['./media-modal.component.scss']
 })
 export class MediaModalComponent {
-
   @Input() group!: MediaGroupModel;
   @Output() close = new EventEmitter<void>();
 
   expandedMedia: string | null = null;
+  currentIndex: number = 0;
 
-  constructor(private elRef: ElementRef) { }
+  constructor(private elRef: ElementRef, private renderer: Renderer2) { }
 
   onClose() {
     this.expandedMedia = null;
     this.close.emit();
   }
 
-  expandImage(event: MouseEvent, image: ImageModel) {
-    this.expandedMedia = image.url;
-    const imgContainers = document.querySelectorAll('.img-c');
-    imgContainers.forEach(container => {
-      container.classList.remove('active', 'postactive');
-    });
-
-    const imgContainer = event.currentTarget as HTMLElement;
-    imgContainer.classList.add('active');
-
-    setTimeout(() => {
-      imgContainer.classList.add('positioned');
-    }, 0);
-  }
-
-  expandVideo(event: MouseEvent, video: VideoModel) {
+  expandMedia(index: number) {
     this.stopExpandedMedia();
-    this.expandedMedia = video.url;
-
-    const videoContainers = document.querySelectorAll('.img-c');
-    videoContainers.forEach(container => {
-      container.classList.remove('active', 'postactive');
-    });
-
-    const videoContainer = event.currentTarget as HTMLElement;
-    videoContainer.classList.add('active');
-
-    setTimeout(() => {
-      videoContainer.classList.add('positioned');
-      this.playExpandedVideo();
-    }, 0);
+    const media = this.group.images.concat(this.group.videos)[index];
+    this.currentIndex = index;
+    this.expandedMedia = media.url;
+    this.playExpandedVideo();
   }
 
   closeExpanded() {
     this.stopExpandedMedia();
     this.expandedMedia = null;
+  }
+
+  nextMedia(event: MouseEvent) {
+    event.stopPropagation();
+    const totalMedia = this.group.images.length + this.group.videos.length;
+    this.currentIndex = (this.currentIndex + 1) % totalMedia;
+    this.expandMedia(this.currentIndex);
+  }
+
+  previousMedia(event: MouseEvent) {
+    event.stopPropagation();
+    const totalMedia = this.group.images.length + this.group.videos.length;
+    this.currentIndex = (this.currentIndex - 1 + totalMedia) % totalMedia;
+    this.expandMedia(this.currentIndex);
   }
 
   isImage(mediaUrl: string): boolean {
@@ -82,6 +67,18 @@ export class MediaModalComponent {
     if (videoElement) {
       videoElement.pause();
       videoElement.currentTime = 0;
+    }
+  }
+
+  onDragStart(event: DragEvent) {
+    event.dataTransfer?.setDragImage(new Image(), 0, 0);
+  }
+
+  onDragEnd(event: DragEvent) {
+    if (event.offsetX > 100) {
+      this.nextMedia(new MouseEvent('click'));
+    } else if (event.offsetX < -100) {
+      this.previousMedia(new MouseEvent('click'));
     }
   }
 }

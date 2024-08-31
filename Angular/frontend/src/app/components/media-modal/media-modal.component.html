@@ -4,8 +4,14 @@
         <h2>Media for {{ group.date | date: 'longDate' }}</h2>
         <button (click)="onClose()">Close</button>
     </div>
-    <div class="modal-content">
+    <div class="modal-content" (dragstart)="onDragStart($event)" (dragend)="onDragEnd($event)" draggable="true">
         <div *ngIf="expandedMedia" class="expanded-media">
+            <button class="prev-button" (click)="previousMedia($event)">
+                &#10094;
+            </button>
+            <button class="next-button" (click)="nextMedia($event)">
+                &#10095;
+            </button>
             <img *ngIf="isImage(expandedMedia)" [src]="expandedMedia" alt="Expanded Image" />
             <video *ngIf="!isImage(expandedMedia)" [src]="expandedMedia" controls></video>
             <button class="close-preview-button" (click)="closeExpanded()">
@@ -27,7 +33,7 @@
         <div class="image-gallery" *ngIf="!expandedMedia">
             <h3>Images</h3>
             <div class="gallery">
-                <div *ngFor="let image of group.images" class="img-c" (click)="expandImage($event, image)">
+                <div *ngFor="let image of group.images; let i = index" class="img-c" (click)="expandMedia(i)">
                     <div class="img-w" [style.background-image]="'url(' + image.url + ')'"></div>
                 </div>
             </div>
@@ -35,7 +41,8 @@
         <div class="video-gallery" *ngIf="!expandedMedia">
             <h3>Videos</h3>
             <div class="gallery">
-                <div *ngFor="let video of group.videos" class="img-c" (click)="expandVideo($event, video)">
+                <div *ngFor="let video of group.videos; let i = index" class="img-c"
+                    (click)="expandMedia(group.images.length + i)">
                     <div class="img-w">
                         <video [src]="video.url"></video>
                     </div>
