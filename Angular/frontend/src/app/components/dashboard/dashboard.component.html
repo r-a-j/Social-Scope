@@ -10,7 +10,7 @@
 
   <!-- Posts Section -->
   <div class="posts-section">
-    <h3>User Posts</h3>
+    <h3>Notifications</h3>
     <div class="post" *ngFor="let post of posts">
       <h4 class="post-title">{{ post.caption || post.description }}</h4>
       <p class="post-description">{{ post.description }}</p>
@@ -23,7 +23,7 @@
 
   <!-- Media Section -->
   <div class="media-section">
-    <h3>Media Gallery</h3>
+    <h3>AI Generated Media Gallery</h3>
     <div class="media-grid">
       <div class="media-card" *ngFor="let group of groupedMedia">
         <div class="media-card-header" (click)="openMediaModal(group)">

@@ -47,16 +47,16 @@
 .profile-section {
     display: flex;
     align-items: center;
-    background-color: $primary-color;
+    background-color: $secondary-color;
     padding: $spacing-md;
     border-radius: 10px;
-    color: #fff;
+    color: $black-color;
     margin-bottom: $spacing-lg;
 
     .profile-avatar {
         width: 80px;
         height: 80px;
-        background-color: $secondary-color;
+        background-color: lighten($primary-color, 10%);
         color: $black-color;
         border-radius: 50%;
         display: flex;
@@ -75,7 +75,7 @@
 
         .profile-email {
             font-size: $font-size-sm;
-            color: $muted-color;
+            color: $text-color;
         }
     }
 }

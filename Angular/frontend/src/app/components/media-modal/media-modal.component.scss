@@ -19,12 +19,9 @@
     padding: $spacing-md;
     border-radius: 10px;
     z-index: 20;
-    max-width: 600px;
-    /* Reduce the max-width to make the modal medium-sized */
+    max-width: 800px;
     width: 90%;
-    /* Ensure it fits smaller screens */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    /* Add a subtle shadow for depth */
 
     .modal-header {
         display: flex;
@@ -35,36 +32,80 @@
         h2 {
             margin: 0;
             font-size: $font-size-md;
-            /* Adjust the font size */
         }
 
         button {
-            background-color: $primary-color;
-            color: #fff;
-            border: none;
+            background-color: $secondary-color;
+            color: $black-color;
+            border: 2px solid black;
             border-radius: 5px;
             padding: $spacing-xs $spacing-sm;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            font-size: $font-size-sm;
-            /* Adjust the button font size */
+            font-size: $font-size-md;
+            font-weight: bold;
 
             &:hover {
-                background-color: darken($primary-color, 10%);
+                background-color: darken($secondary-color, 10%);
             }
         }
     }
 
     .modal-content {
 
-        img,
-        video {
-            width: 100%;
-            max-height: 200px;
-            /* Reduce the max-height to make media smaller */
-            margin-bottom: $spacing-sm;
-            object-fit: cover;
-            border-radius: 5px;
+        .image-gallery,
+        .video-gallery {
+            margin-bottom: $spacing-lg;
+
+            h3 {
+                font-size: $font-size-md;
+                margin-bottom: $spacing-sm;
+            }
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: $spacing-md;
+
+            .media-item {
+                position: relative;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                img,
+                video {
+                    width: 100%;
+                    max-height: 150px;
+                    object-fit: cover;
+                    border-radius: 5px;
+                    transition: max-height 0.3s ease;
+                }
+
+                .download-icon {
+                    position: absolute;
+                    top: $spacing-xs;
+                    right: $spacing-xs;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: #fff;
+                    padding: $spacing-xs;
+                    border-radius: 50%;
+                    text-decoration: none;
+                    font-size: $font-size-sm;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:hover {
+                        background-color: $secondary-color;
+                        color: $black-color;
+                    }
+                }
+            }
         }
     }
 }

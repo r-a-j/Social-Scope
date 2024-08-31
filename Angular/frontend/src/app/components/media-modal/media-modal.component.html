@@ -5,11 +5,25 @@
         <button (click)="onClose()">Close</button>
     </div>
     <div class="modal-content">
-        <div *ngFor="let image of group.images">
-            <img [src]="image.url" alt="Image" />
+        <div class="image-gallery">
+            <h3>Images</h3>
+            <div class="media-grid">
+                <div *ngFor="let image of group.images" class="media-item" (click)="expandImage(image)">
+                    <img [src]="image.url" alt="Image" />
+                    <a [href]="image.url" download class="download-icon">⬇</a>
+                </div>
+            </div>
         </div>
-        <div *ngFor="let video of group.videos">
-            <video [src]="video.url" controls></video>
+        <div class="video-gallery">
+            <h3>Videos</h3>
+            <div class="media-grid">
+                <div *ngFor="let video of group.videos" class="media-item" (click)="expandVideo(video)">
+                    <video [src]="video.url" controls></video>
+                    <a [href]="video.url" download class="download-icon">⬇</a>
+                </div>
+            </div>
         </div>
+
+
     </div>
 </div>

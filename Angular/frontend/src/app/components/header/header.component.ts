@@ -17,4 +17,6 @@ const imports = [
 export class HeaderComponent {
   public isLoggedIn = true;
   public userName = 'John Doe';
+
+  logout() { }
 }
