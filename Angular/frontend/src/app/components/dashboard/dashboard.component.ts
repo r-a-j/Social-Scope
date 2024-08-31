@@ -31,7 +31,6 @@ export class DashboardComponent {
   selectedGroup: MediaGroupModel | null = null;
 
   constructor() {
-    // Example User Data
     const user: UserModel = {
       id: 1,
       firstName: 'John',
@@ -46,7 +45,6 @@ export class DashboardComponent {
     this.userName = `${user.firstName} ${user.lastName}`;
     this.userEmail = user.email;
 
-    // Example Posts
     this.posts = [
       {
         id: 1,
@@ -65,32 +63,62 @@ export class DashboardComponent {
         createdOn: new Date(),
         downloadedOn: new Date()
       }
-      // Add more posts as needed
     ];
 
-    // Example Images
     this.images = [
       {
         id: 1,
-        url: 'assets/sample-images/2024-08-12_22-47-20_UTC_1.jpg',
+        url: 'assets/sample-images/1.jpg',
         postId: 1,
       },
       {
         id: 2,
-        url: 'assets/sample-images/2024-08-12_22-47-20_UTC_8.jpg',
+        url: 'assets/sample-images/2.jpg',
+        postId: 1,
+      },
+      {
+        id: 3,
+        url: 'assets/sample-images/3.jpg',
+        postId: 1,
+      },
+      {
+        id: 4,
+        url: 'assets/sample-images/4.jpg',
+        postId: 1,
+      },
+      {
+        id: 5,
+        url: 'assets/sample-images/5.jpg',
+        postId: 1,
+      },
+      {
+        id: 6,
+        url: 'assets/sample-images/6.jpg',
         postId: 1,
       }
-      // Add more images as needed
     ];
 
-    // Example Videos
     this.videos = [
       {
         id: 1,
         url: 'assets/sample-videos/2024-08-24_14-58-16_UTC.mp4',
         postId: 1,
+      },
+      {
+        id: 2,
+        url: 'assets/sample-videos/2024-08-24_14-58-16_UTC.mp4',
+        postId: 1,
+      },
+      {
+        id: 3,
+        url: 'assets/sample-videos/2024-08-24_14-58-16_UTC.mp4',
+        postId: 1,
+      },
+      {
+        id: 4,
+        url: 'assets/sample-videos/2024-08-24_14-58-16_UTC.mp4',
+        postId: 1,
       }
-      // Add more videos as needed
     ];
 
     this.groupMediaByDate();
@@ -103,6 +131,7 @@ export class DashboardComponent {
       const dateKey = post.createdOn.toDateString();
       if (!mediaMap.has(dateKey)) {
         mediaMap.set(dateKey, {
+          description: '',
           date: post.createdOn,
           images: [],
           videos: []
@@ -118,12 +147,10 @@ export class DashboardComponent {
     this.groupedMedia = Array.from(mediaMap.values());
   }
 
-  // Function to open the modal
   openMediaModal(group: MediaGroupModel) {
     this.selectedGroup = group;
   }
 
-  // Function to close the modal
   closeMediaModal() {
     this.selectedGroup = null;
   }

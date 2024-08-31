@@ -29,8 +29,10 @@
         <div class="media-card-header" (click)="openMediaModal(group)">
           <h4>{{ group.date | date: 'longDate' }}</h4>
           <div class="media-thumbnails">
-            <img *ngFor="let image of group.images.slice(0, 4)" [src]="image.url" alt="Thumbnail"
-              class="media-thumbnail">
+            <div class="thumbnail-grid">
+              <img *ngFor="let image of group.images.slice(0, 4)" [src]="image.url" alt="Thumbnail"
+                class="media-thumbnail">
+            </div>
           </div>
         </div>
       </div>

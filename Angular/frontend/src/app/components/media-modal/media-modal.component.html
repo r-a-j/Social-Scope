@@ -5,25 +5,42 @@
         <button (click)="onClose()">Close</button>
     </div>
     <div class="modal-content">
-        <div class="image-gallery">
+        <div *ngIf="expandedMedia" class="expanded-media">
+            <img *ngIf="isImage(expandedMedia)" [src]="expandedMedia" alt="Expanded Image" />
+            <video *ngIf="!isImage(expandedMedia)" [src]="expandedMedia" controls></video>
+            <button class="close-preview-button" (click)="closeExpanded()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#000000">
+                    <path
+                        d="m136-80-56-56 264-264H160v-80h320v320h-80v-184L136-80Zm344-400v-320h80v184l264-264 56 56-264 264h184v80H480Z" />
+                </svg>
+            </button>
+            <a [href]="expandedMedia" download class="download-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#000000">
+                    <path
+                        d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+                </svg>
+            </a>
+        </div>
+
+        <div class="image-gallery" *ngIf="!expandedMedia">
             <h3>Images</h3>
-            <div class="media-grid">
-                <div *ngFor="let image of group.images" class="media-item" (click)="expandImage(image)">
-                    <img [src]="image.url" alt="Image" />
-                    <a [href]="image.url" download class="download-icon">⬇</a>
+            <div class="gallery">
+                <div *ngFor="let image of group.images" class="img-c" (click)="expandImage($event, image)">
+                    <div class="img-w" [style.background-image]="'url(' + image.url + ')'"></div>
                 </div>
             </div>
         </div>
-        <div class="video-gallery">
+        <div class="video-gallery" *ngIf="!expandedMedia">
             <h3>Videos</h3>
-            <div class="media-grid">
-                <div *ngFor="let video of group.videos" class="media-item" (click)="expandVideo(video)">
-                    <video [src]="video.url" controls></video>
-                    <a [href]="video.url" download class="download-icon">⬇</a>
+            <div class="gallery">
+                <div *ngFor="let video of group.videos" class="img-c" (click)="expandVideo($event, video)">
+                    <div class="img-w">
+                        <video [src]="video.url"></video>
+                    </div>
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
