@@ -7,10 +7,16 @@
     <div class="modal-content" (dragstart)="onDragStart($event)" (dragend)="onDragEnd($event)" draggable="true">
         <div *ngIf="expandedMedia" class="expanded-media">
             <button class="prev-button" (click)="previousMedia($event)">
-                &#10094;
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#000000">
+                    <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+                </svg>
             </button>
             <button class="next-button" (click)="nextMedia($event)">
-                &#10095;
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#000000">
+                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                </svg>
             </button>
             <img *ngIf="isImage(expandedMedia)" [src]="expandedMedia" alt="Expanded Image" />
             <video *ngIf="!isImage(expandedMedia)" [src]="expandedMedia" controls></video>
