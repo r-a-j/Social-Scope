@@ -1,4 +1,4 @@
-<img src="https://github.com/r-a-j/Social-Scope/blob/main/assets/social-scope.png" />
+<img src="https://github.com/r-a-j/Social-Scope/blob/main/assets/social-scope-parity-error-interstellar.gif" />
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/r-a-j/Social-Scope) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/01a4db2983b64950b6130e31ce4b14a9)](https://app.codacy.com/gh/r-a-j/Social-Scope/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) [![license](https://custom-icon-badges.herokuapp.com/github/license/r-a-j/Social-Scope?logo=law&logoColor=white)](https://github.com/r-a-j/Social-Scope/blob/main/LICENSE "license MIT")
 
