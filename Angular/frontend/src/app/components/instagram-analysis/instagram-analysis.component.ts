@@ -22,10 +22,8 @@ const imports = [
 })
 export class InstagramAnalysisComponent {
   public postUrl: string = '';
-  public images: InstagramMediaWithType[] = [];
-  public videos: InstagramMediaWithType[] = [];
-  public selectedImage: InstagramMediaWithType | null = null;
-  public selectedVideo: InstagramMediaWithType | null = null;
+  public mediaList: InstagramMediaWithType[] = [];
+  public selectedMedia: InstagramMediaWithType | null = null;
   public showModal: boolean = false;
   public modalMedia: InstagramMediaWithType | null = null;
 
@@ -39,10 +37,21 @@ export class InstagramAnalysisComponent {
     if (this.formValidationService.isValidInstagramUrl(this.postUrl)) {
       this.instagramService.extractMedia(this.postUrl).subscribe({
         next: data => {
-          this.images = data.images.map(image => ({ ...image, type: 'image' }));
-          this.videos = data.videos.map(video => ({ ...video, type: 'video' }));
-          this.selectedImage = this.images.length > 0 ? this.images[0] : null;
-          this.selectedVideo = this.videos.length > 0 ? this.videos[0] : null;
+          const videoBaseNames = data.videos.map((video: InstagramMediaWithType) =>
+            video.src.substring(video.src.lastIndexOf('/') + 1, video.src.lastIndexOf('.'))
+          );
+
+          const filteredImages = data.images.filter((image: InstagramMediaWithType) => {
+            const imageBaseName = image.src.substring(image.src.lastIndexOf('/') + 1, image.src.lastIndexOf('.'));
+            return !videoBaseNames.includes(imageBaseName);
+          });
+
+          this.mediaList = [
+            ...filteredImages.map((image: InstagramMediaWithType) => ({ ...image, type: 'image' as const })),
+            ...data.videos.map((video: InstagramMediaWithType) => ({ ...video, type: 'video' as const }))
+          ];
+
+          this.selectedMedia = this.mediaList.length > 0 ? this.mediaList[0] : null;
         },
         error: error => {
           this.notificationService.error(error.message);
@@ -54,12 +63,8 @@ export class InstagramAnalysisComponent {
     }
   }
 
-  public selectImage(image: InstagramMediaWithType): void {
-    this.selectedImage = image;
-  }
-
-  public selectVideo(video: InstagramMediaWithType): void {
-    this.selectedVideo = video;
+  public selectMedia(media: InstagramMediaWithType): void {
+    this.selectedMedia = media;
   }
 
   public openModal(media: InstagramMediaWithType): void {

@@ -31,9 +31,29 @@ def extract_media(url):
         return {"error": "Invalid URL"}
 
     target_dir = downloader.save_single_post(shortcode)
+
+    # Get image and video files
     images = Utility.get_image_files(target_dir)
     videos = Utility.get_video_files(target_dir) or []
 
+    # Prepare image URLs
+    image_dict = {
+        os.path.splitext(img)[0]: f"http://127.0.0.1:5000/{img}" for img in images
+    }
+
+    # Prepare video URLs (with corresponding thumbnail if available)
+    videos = [
+        {
+            "src": f"http://127.0.0.1:5000/{video}",
+            # Try to match the base name of the video with the image for the thumbnail
+            "thumb": image_dict.get(
+                os.path.splitext(video)[0], f"http://127.0.0.1:5000/{video}"
+            ),
+        }
+        for video in videos
+    ]
+
+    # Convert images into the format you want
     images = [
         {
             "src": f"http://127.0.0.1:5000/{img}",
@@ -41,16 +61,6 @@ def extract_media(url):
         }
         for img in images
     ]
-    videos = (
-        [
-            {
-                "src": f"http://127.0.0.1:5000/{videos}",
-                "thumb": images[0]["thumb"],
-            }
-        ]
-        if videos
-        else []
-    )
 
     return {"images": images, "videos": videos}
 

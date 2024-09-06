@@ -6,35 +6,25 @@
     <button class="btn btn-primary" (click)="loadPost()">Load Post</button>
   </div>
 
-  <!-- Image Gallery -->
   <div class="gallery-section">
     <section class="gallery">
-      <div class="gallery__preview" *ngIf="selectedImage" (click)="openModal(selectedImage)">
-        <img [src]="selectedImage.src" alt="Selected Image" class="gallery__img" />
+      <div class="gallery__preview" *ngIf="selectedMedia" (click)="openModal(selectedMedia)">
+        <ng-container *ngIf="selectedMedia.type === 'image'; else videoPreview">
+          <img [src]="selectedMedia.src" alt="Selected Image" class="gallery__img" />
+        </ng-container>
+        <ng-template #videoPreview>
+          <video [src]="selectedMedia.src" class="gallery__video" controls muted></video>
+        </ng-template>
       </div>
+
       <div class="gallery__thumbs">
-        <div *ngFor="let image of images; let i = index" class="gallery__thumb">
-          <img [src]="image.thumb" alt="Thumbnail {{i + 1}}" (click)="selectImage(image)" />
+        <div *ngFor="let media of mediaList; let i = index" class="gallery__thumb">
+          <img [src]="media.thumb" alt="Thumbnail {{i + 1}}" (click)="selectMedia(media)" />
         </div>
       </div>
     </section>
   </div>
 
-  <!-- Video Gallery -->
-  <div class="gallery-section">
-    <section class="gallery">
-      <div class="gallery__preview" *ngIf="selectedVideo" (click)="openModal(selectedVideo)">
-        <video [src]="selectedVideo.src" controls class="gallery__video"></video>
-      </div>
-      <div class="gallery__thumbs">
-        <div *ngFor="let video of videos; let i = index" class="gallery__thumb">
-          <img [src]="video.thumb" alt="Thumbnail {{i + 1}}" (click)="selectVideo(video)" />
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Modal Component -->
   <app-instagram-media-modal *ngIf="showModal" [media]="modalMedia" (close)="closeModal()"></app-instagram-media-modal>
 
   <div class="instagram-ai-feature">
@@ -95,5 +85,4 @@
       a creative prompt, and let the AI do the rest. Experience the magic of AI-driven art creation today!
     </p>
   </div>
-
 </div>
