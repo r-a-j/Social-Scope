@@ -18,7 +18,11 @@
         <button class="btn btn-primary" (click)="onGenerateAI()">Generate AI</button>
       </div>
       <div class="right-image-placeholder">
-        <img src="../../../assets/placeholder-images/generate-ai-placeholder.png" alt="Placeholder Image">
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+        <img *ngIf="processedImage" [src]="processedImage.src" alt="Processed Image">
+        <img *ngIf="!processedImage && !errorMessage" src="../../../assets/placeholder-images/generate-ai-placeholder.png" alt="Placeholder Image">
       </div>
     </div>
   </div>
