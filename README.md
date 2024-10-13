@@ -16,7 +16,6 @@
 
 ```console
 pip install -r requirements.txt
-foo
 ```
 
 ### Requirements:
