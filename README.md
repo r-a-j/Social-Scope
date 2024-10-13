@@ -10,7 +10,9 @@
 
 #### [Development Docs](https://precious-jalebi-a6ee2b.netlify.app/development-docs/)
 
-### Screenshots Demo:
+### Screenshots:
+
+### Installation:
 
 ### Requirements:
 ---
