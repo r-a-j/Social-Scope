@@ -12,9 +12,6 @@
 
 ### Screenshots Demo:
 
-![image](https://github.com/user-attachments/assets/f763d5ea-13cf-4ccc-975b-9ed5f41296bd)
-
-
 ### Requirements:
 ---
  - [Python 3.10](https://www.python.org/downloads/release/python-3100/)
