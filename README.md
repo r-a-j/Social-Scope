@@ -14,11 +14,16 @@
 
 ### Installation:
 
-### Requirements:
----
- - [Python 3.10](https://www.python.org/downloads/release/python-3100/)
+```console
+pip install -r requirements.txt
+foo
+```
 
-🔍 **Planned Tasks:**
+### Requirements:
+
+---
+ 
+ 🔍 **Planned Tasks:**
 
 - **Sentiment Analysis:** 💬 Understand user opinions from comments and captions.
 - **Image Recognition:** 🖼️ Identify objects, scenes, and people in images.
@@ -40,8 +45,3 @@
 5. **Evaluation:** 📊 Assess model performance using appropriate metrics.
 6. **Visualization:** 📊 Create engaging visualizations to present insights.
 7. **Deployment:** 🚀 Deploy models and visualizations in a user-friendly interface.
-
-### Installing development requirements
----
-
-    pip install -r requirements.txt
