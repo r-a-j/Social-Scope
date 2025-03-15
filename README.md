@@ -1,14 +1,12 @@
 <img src="https://github.com/r-a-j/Social-Scope/blob/main/assets/social-scope-parity-error-interstellar.gif" />
 
-![GitHub last commit](https://img.shields.io/github/last-commit/r-a-j/Social-Scope) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/01a4db2983b64950b6130e31ce4b14a9)](https://app.codacy.com/gh/r-a-j/Social-Scope/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) [![license](https://custom-icon-badges.herokuapp.com/github/license/r-a-j/Social-Scope?logo=law&logoColor=white)](https://github.com/r-a-j/Social-Scope/blob/main/LICENSE "license MIT")
+![GitHub last commit](https://img.shields.io/github/last-commit/r-a-j/Social-Scope) [![license](https://custom-icon-badges.herokuapp.com/github/license/r-a-j/Social-Scope?logo=law&logoColor=white)](https://github.com/r-a-j/Social-Scope/blob/main/LICENSE "license MIT")
 
-[![Number of files](https://img.shields.io/github/directory-file-count/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/directory-file-count/r-a-j/Social-Scope) [![Code size](https://img.shields.io/github/languages/code-size/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/languages/code-size/r-a-j/Social-Scope) [![Followers](https://img.shields.io/github/followers/r-a-j?style=for-the-badge)](https://img.shields.io/github/followers/r-a-j) [![Forks](https://img.shields.io/github/forks/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/forks/r-a-j/Social-Scope) [![Stars](https://img.shields.io/github/stars/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/stars/r-a-j/Social-Scope) [![Open issues](https://img.shields.io/github/issues-raw/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/issues-raw/r-a-j/Social-Scope) [![Closed Issues](https://img.shields.io/github/issues-closed-raw/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/issues-closed-raw/r-a-j/Social-Scope) [![Open pull requests](https://img.shields.io/github/issues-pr-raw/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/issues-pr-raw/r-a-j/Social-Scope) [![Closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/issues-pr-closed-raw/r-a-j/Social-Scope) [![Discussions](https://img.shields.io/github/discussions/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/discussions/r-a-j/Social-Scope) [![Contributors](https://img.shields.io/github/contributors/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/contributors/r-a-j/Social-Scope) [![Language](https://img.shields.io/github/languages/top/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/languages/top/r-a-j/Social-Scope?style=for-the-badge)
+[![Open issues](https://img.shields.io/github/issues-raw/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/issues-raw/r-a-j/Social-Scope) [![Open pull requests](https://img.shields.io/github/issues-pr-raw/r-a-j/Social-Scope?style=for-the-badge)](https://img.shields.io/github/issues-pr-raw/r-a-j/Social-Scope)
 
-#### [Social Scope homepage](https://github.com/r-a-j/Social-Scope)
+#### [Github Repo](https://github.com/r-a-j/Social-Scope)
 
-#### [Docs](https://precious-jalebi-a6ee2b.netlify.app/)
-
-#### [Development Docs](https://precious-jalebi-a6ee2b.netlify.app/development-docs/)
+#### [Documentation](https://precious-jalebi-a6ee2b.netlify.app/)
 
 ### Screenshots:
 
