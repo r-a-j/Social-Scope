@@ -1,4 +1,4 @@
-<img src="https://github.com/r-a-j/Social-Scope/blob/main/assets/social-scope-parity-error-interstellar.gif" />
+<img src="https://raw.githubusercontent.com/r-a-j/Social-Scope/main/assets/social-scope-parity-error-interstellar.gif" />
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/r-a-j/Social-Scope) [![license](https://custom-icon-badges.herokuapp.com/github/license/r-a-j/Social-Scope?logo=law&logoColor=white)](https://github.com/r-a-j/Social-Scope/blob/main/LICENSE "license MIT")
 
